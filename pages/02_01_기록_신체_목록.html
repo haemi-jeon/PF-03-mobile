@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>신체기록_목록</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper with__tabbar">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_start">
+        <i class="ico back">뒤로</i>
+      </button>
+      <h1 class="header_title">
+        <p class="ellipsis">신체 기록</p>
+      </h1>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content record">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button type="button" class="nav-link active" data-bs-toggle="tab" data-bs-target="#record01"
+              aria-selected="true" role="tab">신체 기록</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button type="button" class="nav-link" data-bs-toggle="tab" data-bs-target="#record02" aria-selected="false"
+              tabindex="-1" role="tab">혈당 반응 기록</button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="record01" class="tab-pane fade show active" tabindex="0">
+            <div class="record-header">
+              <div class="btn_area">
+                <button type="button" class="btn active">
+                  <p>
+                    <span class="name">허리사이즈</span>
+                    <span class="unit">(cm)</span>
+                  </p>
+                  <p class="num">84.0</p>
+                  <p class="date">2023. 11. 06</p>
+                </button>
+                <button type="button" class="btn">
+                  <p>
+                    <span class="name">체지방률</span>
+                    <span class="unit">(%)</span>
+                  </p>
+                  <p class="num">35.1</p>
+                  <p class="date">2023. 11. 06</p>
+                </button>
+                <button type="button" class="btn">
+                  <p>
+                    <span class="name">체중</span>
+                    <span class="unit">(kg)</span>
+                  </p>
+                  <p class="num">65.0</p>
+                  <p class="date">2023. 11. 06</p>
+                </button>
+              </div>
+            </div>
+            <div class="record-body">
+              <h5 class="title">내 신체기록 변화</h5>
+              <div class="graph">
+                <div class="graph__visual">
+                  <!-- 차트 영역 -->
+                  <canvas id="chart" style="display: block; width: 100%; height: 210px;"></canvas>
+                  <!-- // 차트 영역 -->
+                </div>
+                <div class="graph__help">
+                  <p>
+                    등록된 정보가 없습니다.<br />
+                    신체 기록을 등록해주세요.
+                  </p>
+                </div>
+                <div class="graph__legend" style="position: absolute; top: 0; right: 0;">
+                  <ul>
+                    <li class="legend">허리 사이즈 (cm)</li>
+                    <li class="legend legend--goal">목표 (cm)</li>
+                  </ul>
+                </div>
+                <div class="graph__tooltip" style="position: absolute; top: 40px; left: 160px;">
+                  <p class="value value--decreasing"> <!-- 감소 .value--decreasing || 증가 .value--increasing -->
+                    <span>824.0 cm</span>
+                    <small class="change">(-333.3cm)</small>
+                    <button type="button" class="btn">
+                      <i class="ico edit"></i>
+                    </button>
+                  </p>
+                </div>
+                <div class="graph__controller">
+                  <button type="button" class="btn graph__controller--prev">
+                    <i class="ico arrow-prev"></i>
+                  </button>
+                  <button type="button" class="btn graph__controller--next">
+                    <i class="ico arrow-next"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="record02" class="tab-pane fade" tabindex="0">
+            record02
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tab_Bar -->
+    <nav class="tab_bar">
+      <a href="javascript:void(0)" class="tab_link active">
+        <span class="ico home"></span>
+        <span class="text">홈</span>
+      </a>
+      <a href="javascript:void(0)" class="tab_link">
+        <span class="ico report"></span>
+        <span class="text">기록</span>
+      </a>
+      <button type="button" class="btn tab__btn">
+        <span class="ico plus"></span>
+      </button>
+      <a href="javascript:void(0)" class="tab_link">
+        <span class="ico chat"></span>
+        <span class="text">채팅</span>
+      </a>
+      <a href="javascript:void(0)" class="tab_link">
+        <span class="ico community"></span>
+        <span class="text">커뮤니티</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+  <title>내정보_컨텐츠_상세</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_start">
+        <i class="ico back"></i>
+      </button>
+      <h1 class="header_title">
+        <p class="ellipsis">콘텐츠</p>
+      </h1>
+      <button type="button" class="btn btn_end">
+        <i class="ico bookmark"></i>
+        <!-- <i class="ico bookmark--active"></i> -->
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content content--detail">
+        <div class="content__header">
+          <h2 class="detail__title">웰다 100% 활용 TIP</h2>
+        </div>
+        <div class="content__body">
+          <div class="detail__content">
+            <img src="../assets/images/img-contents01.png" alt="컨텐츠 시작 이미지" />
+            <h5 class="detail__content-title">웰다와 함께하는 다이어트 시작!</h5>
+            <p class="detail__content-desc">
+              웰다 패밀리, 반가워요😄<br /><br />
+              여러분이 다이어트를 결심한 것 자체가 이미 큰 성공입니다.<br /><br />
+              웰체크 다이어트는 과학적 원리로 체지방 생성은 줄이고, 연소는 늘리는 지속가능하고 건강한 다이어트입니다 .<br /><br />
+              오늘부터 웰다와 함께 천천히, 그리고 확실하게 목표를 향해 나아가 보아요!<br /><br />
+              그럼, 성공적인 웰다 여정을 위해 <span class="text-primary">웰체크 다이어트 앱을 100% 활용하기 위한 TIP</span>! 지금부터 알려드릴게요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- layer -->
+    <div class="layer btn-layer">
+      <button type="button" class="btn btn_primary">이제, 시작해볼까요?</button>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- layer 높이에 따라 container 높이 재설정 -->
+  <script>
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
+</body>
+
+</html>

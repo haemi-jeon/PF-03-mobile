@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>비밀번호찾기_인증</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_start">
+        <i class="ico back"></i>
+      </button>
+      <button type="button" class="btn btn_end">
+        <i class="ico close">닫기</i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="sign_in">
+        <div class="title">
+          <h2>전송된 인증번호를<br />입력해주세요</h2>
+        </div>
+        <form class="form_area">
+          <div class="form-group">
+            <label class="form-label asterisk">이름</label>
+            <input type="text" class="form-control" value="" placeholder="이름을 입력해주세요" />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber" class="form-label asterisk">전화번호</label>
+            <div class="id_input">
+              <span class="country_code">+ 82</span>
+              <input type="text" id="phoneNumber" class="form-control" value="010-1234-5678" placeholder="전화번호를 입력해주세요"
+                disabled />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label asterisk">인증번호</label>
+            <div class="certification_box">
+              <div class="count_input">
+                <input type="number" pattern="\d*" class="form-control" placeholder="인증번호를 입력해주세요"
+                  autocomplete="one-time-code" required />
+                <span class="time">03:00</span>
+              </div>
+              <button type="button" class="btn btn_outline_primary" data-bs-toggle="modal"
+                data-bs-target="#modalResendCode">재전송</button>
+            </div>
+            <p class="helper_text d-block">인증시간이 만료되었습니다. 다시 시도해주세요!</p>
+            <!-- 인증시간만료 ? .d-block : d-none -->
+          </div>
+        </form>
+        <div class="help_area">
+          <h5>인증번호가 도착하지 않는 경우,</h5>
+          <p><a href="javascript:void(0)">고객센터</a>를 통해 계정 확인 및 비밀번호 재설정을 요청해주세요.</p>
+        </div>
+        <div class="btn_area">
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+            data-bs-target="#modalDiscord">인증하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

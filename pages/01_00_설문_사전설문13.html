@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+  <title>사전설문13</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header_title">
+        <p class="ellipsis">사전 설문</p>
+      </h1>
+      <button type="button" class="btn btn_end">
+        <i class="ico close"></i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content phase">
+        <div class="content__header">
+          <div class="phase__title">
+            허리 사이즈 감량 목표를<br />
+            설정해주세요.<br />
+            <small>평소 입는 바지사이즈를 참고하셔서 작성해주세요.</small>
+          </div>
+          <div class="phase__indicator-line">
+            <p class="phase__indicator-line--current" style="width: calc((100% / 13) * 13);">현재 단계</p>
+          </div>
+        </div>
+        <div class="content__body">
+          <div class="ruler">
+            <div class="ruler__value">
+              <span>40</span>
+              <span class="ruler__value-unit">cm</span>
+            </div>
+            <div class="ruler__visual">
+              ruler 영역
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- layer -->
+    <div class="layer btn-layer">
+      <div class="btn-area">
+        <button type="button" class="btn btn_white">이전</button>
+        <button type="button" class="btn btn_primary">다음</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- layer 높이에 따라 container 높이 재설정 -->
+  <script>
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
+</body>
+
+</html>

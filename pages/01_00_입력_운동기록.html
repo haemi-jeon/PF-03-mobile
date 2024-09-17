@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>입력_운동기록</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_start">
+        <i class="ico back">뒤로</i>
+      </button>
+      <h1 class="header_title">
+        <p class="ellipsis">운동 기록</p>
+      </h1>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content record">
+        <div class="record-header">
+          <div class="form_area">
+            <div class="input-group input-group--calendar">
+              <input type="text" class="form-control" value="2023. 12. 19 (화)" readonly />
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalReactCalendar">
+                <i class="ico drop-down"></i>
+              </button>
+            </div>
+            <div class="input-group input-group--time">
+              <input type="text" class="form-control" value="10:00" readonly />
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalTimepicker">
+                <i class="ico drop-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="record-body">
+          <div class="form_area">
+            <div class="form-group">
+              <label for="" class="form-label">운동 종류</label>
+              <input type="text" class="form-control" />
+              <div class="flex-row">
+                <label for="checkbox" class="form-check-label">높은 강도로 운동하셨나요?</label>
+                <div class="form-check">
+                  <input type="checkbox" id="checkbox" name="checkbox" class="form-check-input" checked />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">운동 시간</label>
+              <div class="unit minute">
+                <input type="number" pattern="\d*" class="form-control" placeholder="00">
+              </div>
+            </div>
+          </div>
+          <div class="layer btn-layer">
+            <div class="help-area">
+              <i class="ico alert"></i>
+              <p>
+                <strong>높은 강도로 운동하셨나요?</strong>
+                숨이 차는 운동은 일시적으로 혈당 수치를 높일 수 있습니다.
+                하지만 이는 단기적인 현상으로, 장기적으로 숨이 차는 운동은 체지방 연소에 도움을 주는 좋은 습관입니다.
+              </p>
+            </div>
+            <button type="button" class="btn btn_primary">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : react-datepicker -->
+  <div class="modal fade" id="modalReactCalendar" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="react-datepicker">
+            <div class="react-datepicker__triangle"></div>
+            <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+            <button type="button" class="react-datepicker__navigation react-datepicker__navigation--previous"
+              aria-label="Previous Month">
+              <span class="react-datepicker__navigation-icon react-datepicker__navigation-icon--previous">Previous
+                Month</span>
+            </button>
+            <button type="button" class="react-datepicker__navigation react-datepicker__navigation--next"
+              aria-label="Next Month"><span
+                class="react-datepicker__navigation-icon react-datepicker__navigation-icon--next">Next
+                Month</span></button>
+            <div class="react-datepicker__month-container">
+              <div class="react-datepicker__header">
+                <div class="react-datepicker__current-month">1월 2024</div>
+                <div class="react-datepicker__header__dropdown react-datepicker__header__dropdown--scroll"></div>
+                <div class="react-datepicker__day-names">
+                  <div class="react-datepicker__day-name">월</div>
+                  <div class="react-datepicker__day-name">화</div>
+                  <div class="react-datepicker__day-name">수</div>
+                  <div class="react-datepicker__day-name">목</div>
+                  <div class="react-datepicker__day-name">금</div>
+                  <div class="react-datepicker__day-name">토</div>
+                  <div class="react-datepicker__day-name">일</div>
+                </div>
+              </div>
+              <div class="react-datepicker__month" aria-label="month  2024-01" role="listbox">
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--001" tabindex="-1"
+                    aria-label="Choose 2024년 1월 1일 월요일" role="option" aria-disabled="false" aria-selected="false">
+                    1
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--002" tabindex="-1"
+                    aria-label="Choose 2024년 1월 2일 화요일" role="option" aria-disabled="false" aria-selected="false">
+                    2
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--003" tabindex="-1"
+                    aria-label="Choose 2024년 1월 3일 수요일" role="option" aria-disabled="false" aria-selected="false">
+                    3
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--004" tabindex="-1"
+                    aria-label="Choose 2024년 1월 4일 목요일" role="option" aria-disabled="false" aria-selected="false">
+                    4
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--005" tabindex="-1"
+                    aria-label="Choose 2024년 1월 5일 금요일" role="option" aria-disabled="false" aria-selected="false">
+                    5
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 6일 토요일" role="option" aria-disabled="false"
+                    aria-selected="false">6</div>
+                  <div class="react-datepicker__day react-datepicker__day--007 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 7일 일요일" role="option" aria-disabled="false"
+                    aria-selected="false">7</div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--008" tabindex="-1"
+                    aria-label="Choose 2024년 1월 8일 월요일" role="option" aria-disabled="false" aria-selected="false">
+                    8
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--009" tabindex="-1"
+                    aria-label="Choose 2024년 1월 9일 화요일" role="option" aria-disabled="false" aria-selected="false">
+                    9
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--010" tabindex="-1"
+                    aria-label="Choose 2024년 1월 10일 수요일" role="option" aria-disabled="false" aria-selected="false">10
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--recorded"
+                    tabindex="-1" aria-label="Choose 2024년 1월 11일 목요일" role="option" aria-disabled="false"
+                    aria-selected="false">11
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--selected react-datepicker__day--recorded"
+                    tabindex="-1" aria-label="Choose 2024년 1월 12일 금요일" role="option" aria-disabled="false"
+                    aria-selected="false">12
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 13일 토요일" role="option" aria-disabled="false"
+                    aria-selected="false">13</div>
+                  <div class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 14일 일요일" role="option" aria-disabled="false"
+                    aria-selected="false">14</div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--015" tabindex="-1"
+                    aria-label="Choose 2024년 1월 15일 월요일" role="option" aria-disabled="false" aria-selected="false">15
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--016" tabindex="-1"
+                    aria-label="Choose 2024년 1월 16일 화요일" role="option" aria-disabled="false" aria-selected="false">16
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--017" tabindex="-1"
+                    aria-label="Choose 2024년 1월 17일 수요일" role="option" aria-disabled="false" aria-selected="false">17
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--018" tabindex="-1"
+                    aria-label="Choose 2024년 1월 18일 목요일" role="option" aria-disabled="false" aria-selected="false">18
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--019" tabindex="-1"
+                    aria-label="Choose 2024년 1월 19일 금요일" role="option" aria-disabled="false" aria-selected="false">19
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 20일 토요일" role="option" aria-disabled="false"
+                    aria-selected="false">20</div>
+                  <div class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 21일 일요일" role="option" aria-disabled="false"
+                    aria-selected="false">21</div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--022" tabindex="-1"
+                    aria-label="Choose 2024년 1월 22일 월요일" role="option" aria-disabled="false" aria-selected="false">22
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--023" tabindex="-1"
+                    aria-label="Choose 2024년 1월 23일 화요일" role="option" aria-disabled="false" aria-selected="false">23
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--selected react-datepicker__day--today react-datepicker__day--recorded"
+                    tabindex="0" aria-label="Choose 2024년 1월 24일 수요일" role="option" aria-disabled="false"
+                    aria-current="date" aria-selected="true">
+                    24
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 25일 목요일" role="option" aria-disabled="true"
+                    aria-selected="false">25</div>
+                  <div class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 26일 금요일" role="option" aria-disabled="true"
+                    aria-selected="false">26</div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Not available 2024년 1월 27일 토요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    27
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Not available 2024년 1월 28일 일요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    28
+                  </div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 29일 월요일" role="option" aria-disabled="true"
+                    aria-selected="false">29</div>
+                  <div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 30일 화요일" role="option" aria-disabled="true"
+                    aria-selected="false">30</div>
+                  <div class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 31일 수요일" role="option" aria-disabled="true"
+                    aria-selected="false">31</div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 1일 목요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    1
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 2일 금요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    2
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 3일 토요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    3
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 4일 일요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn_primary flex-fill">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : custom-timepicker-->
+  <div class="modal fade" id="modalTimepicker" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <span>시간을 입력해주세요.</span>
+            <small class="text-highlight">※ 실제 식사를 한 시간으로 입력해주세요.</small>
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div class="timepicker">
+            <ul class="timepicker__hour">
+              <li>10</li>
+              <li>11</li>
+              <li class="active">12</li>
+              <li>13</li>
+              <li>14</li>
+            </ul>
+            <span class="timepicker__colon">:</span>
+            <ul class="timepicker__minute">
+              <li>40</li>
+              <li>50</li>
+              <li class="active">00</li>
+              <li>10</li>
+              <li>20</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_white" data-bs-dismiss="modal">취소</button>
+            <button type="button" class="btn btn_primary">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="../modules/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper--slot", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+  <!-- layer 높이에 따라 container 높이 재설정 -->
+  <script>
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
+</body>
+
+</html>

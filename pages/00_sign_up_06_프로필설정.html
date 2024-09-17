@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>프로필설정_웰다캐릭터</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_end">
+        <i class="ico close">닫기</i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="sign_up">
+        <div class="title">
+          <h2>회원님의 프로필을<br />설정해주세요</h2>
+          <p class="sub">롤모델, 입고 싶었던 옷, 전성기 시절 사진 등으로<br />나만의 프로필을 만들어보세요!</p>
+        </div>
+        <form class="form_area validation">
+          <div class="form-group form-group--profile">
+            <span class="profile__preview">
+              <img src="../assets/images/img-contents01.png" alt="프로필 이미지" />
+            </span>
+            <button type="button" class="btn profile__btn">파일선택</button>
+            <ul class="profile__btn-options">
+              <li>
+                <button type="button" class="btn option">
+                  <span>사진 보관함</span>
+                  <i class="ico gallery"></i>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn option">
+                  <span>사진 찍기</span>
+                  <i class="ico photo"></i>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn option">
+                  <span>기본 이미지</span>
+                  <i class="ico avatar"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="form-group valid">
+            <!-- 유효 .valid 유효하지 않음 .invalid-->
+            <label class="form-label asterisk">닉네임</label>
+            <div class="certification_box">
+              <input type="text" class="form-control" placeholder="2~8자 이내로 입력해주세요." required />
+              <button type="button" class="btn btn_outline_primary">중복 확인</button>
+            </div>
+            <div class="validation-feedback">사용 가능한 닉네임입니다.</div>
+          </div>
+        </form>
+        <div class="btn_area">
+          <button type="submit" class="btn btn_primary">설정 완료</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

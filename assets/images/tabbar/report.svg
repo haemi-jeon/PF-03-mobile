@@ -1,0 +1,8 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ic/tab/report/line">
+<path id="Rectangle 1565" d="M23 23H1" stroke="#BDC1C7" stroke-width="2" stroke-linecap="round"/>
+<path id="Vector" d="M7 2C7 1.44772 6.55228 1 6 1H3C2.44772 1 2 1.44772 2 2V18C2 18.5523 2.44772 19 3 19H6C6.55228 19 7 18.5523 7 18V2Z" stroke="#BDC1C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M15 9C15 8.44772 14.5523 8 14 8H11C10.4477 8 10 8.44772 10 9V18C10 18.5523 10.4477 19 11 19H14C14.5523 19 15 18.5523 15 18V9Z" stroke="#BDC1C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M23 13C23 12.4477 22.5523 12 22 12H19C18.4477 12 18 12.4477 18 13V18C18 18.5523 18.4477 19 19 19H22C22.5523 19 23 18.5523 23 18V13Z" stroke="#BDC1C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+  <title>리브레부착</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_start">
+        <i class="ico back"></i>
+      </button>
+      <h1 class="header_title">
+        <p class="ellipsis">리브레 연결하기</p>
+      </h1>
+      <button type="button" class="btn btn_end">
+        <i class="ico close"></i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content phase">
+        <div class="content__header">
+          <div class="phase__title">Step 3. 리브레 부착</div>
+          <div class="phase__indicator-line">
+            <p class="phase__indicator-line--current" style="width: calc((100% / 5) * 3);">현재 단계</p>
+          </div>
+        </div>
+        <div class="content__body">
+          <div class="title">
+            리브레를 부착해주세요.
+          </div>
+          <div class="swiper swiper--slot">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="visual-area">
+                  <img src="../assets/images/libre_3-1.png" alt="libre image" />
+                </div>
+                <div class="text-area">
+                  <p class="num">01</p>
+                  <p>
+                    팔의 후면, 어깨 삼각근 아래를 동봉된 알콜솜으로<br />
+                    깨끗하게 닦아주세요.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="visual-area">
+                  <img src="../assets/images/libre_3-2.png" alt="libre image" />
+                </div>
+                <div class="text-area">
+                  <p class="num">02</p>
+                  <p>
+                    삽입기구의 뚜껑을 돌려서 연 후,<br />
+                    센서팩과 결합해주세요.
+                  </p>
+                  <small class="text-primary">※ 반드시 평평하고 단단한 바닥에서 결합해주세요.</small>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="visual-area">
+                  <img src="../assets/images/libre_3-3.png" alt="libre image" />
+                </div>
+                <div class="text-area">
+                  <p class="num">03</p>
+                  <p>
+                    소독한 부위에 직각으로 삽입기구를 대고,<br />
+                    힘껏 눌러주세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="btn-area">
+            <button type="button" class="btn btn_outline_primary">
+              <span>영상으로 확인하기</span>
+              <i class="ico border-arrow"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- layer -->
+    <div class="layer btn-layer">
+      <button type="button" class="btn btn_primary">부착 완료</button>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="../modules/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper--slot", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+  <!-- layer 높이에 따라 container 높이 재설정 -->
+  <script>
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
+</body>
+
+</html>

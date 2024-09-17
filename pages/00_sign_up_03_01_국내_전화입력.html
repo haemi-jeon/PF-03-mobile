@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>국내_전화입력</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_end">
+        <i class="ico close">닫기</i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="sign_up">
+        <div class="title">
+          <h2>회원가입을 위한<br />전화번호 인증이 필요합니다</h2>
+        </div>
+        <form class="form_area">
+          <div class="form-group">
+            <label for="phoneNumber" class="form-label asterisk">전화번호</label>
+            <input type="text" class="form-control fake_select" value="+ 82 (대한민국)" readonly data-bs-toggle="modal"
+              data-bs-target="#modalCountryCode" />
+            <input type="number" pattern="\d*" id="phoneNumber" class="form-control" placeholder="전화번호를 입력해주세요"
+              required />
+          </div>
+        </form>
+        <div class="btn_area">
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+            data-bs-target="#modalChangePassword">인증번호 발송</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : 전화번호오류 -->
+  <div class="modal fade" id="modalChangePassword" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">알림</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p>유효한 전화번호가 아닙니다.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

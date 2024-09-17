@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>리브레_약관동의</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_end" data-bs-toggle="modal" data-bs-target="#modalCloseAlert">
+        <i class="ico close">닫기</i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="sign_up">
+        <div class="title">
+          <h3>
+            <small>약관 동의</small>
+            연속혈당측정 결과를<br />
+            분석하고 누적 관리 해드립니다.
+          </h3>
+        </div>
+        <form class="form_area">
+          <ul class="term_list">
+            <li class="checked">
+              <div class="form-check">
+                <input type="checkbox" name="agreeTerms" id="agreeTermUseAll" class="form-check-input"
+                  onclick="checkedAll(this)" checked />
+                <label class="form-check-label" for="agreeTermUseAll">모든 이용 약관에 동의합니다.</label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input type="checkbox" name="agreeTerms" id="agreeTermUse01" class="form-check-input" required />
+                <label class="form-check-label" for="agreeTermUse01">개인정보 수집, 이용 내역에 동의합니다.
+                  <strong>(필수)</strong></label>
+              </div>
+              <a href="javascript:void(0)" class="item-link">
+                <i class="ico more-arrow">더보기</i>
+              </a>
+            </li>
+            <li>
+              <div class="form-check">
+                <input type="checkbox" name="agreeTerms" id="agreeTermUse02" class="form-check-input" required />
+                <label class="form-check-label" for="agreeTermUse02">개인정보 제3자 제공 내역에 동의합니다.
+                  <strong>(필수)</strong></label>
+              </div>
+              <a href="javascript:void(0)" class="item-link">
+                <i class="ico more-arrow">더보기</i>
+              </a>
+            </li>
+          </ul>
+        </form>
+        <div class="btn_area">
+          <button type="submit" class="btn btn_primary">동의 후 계속</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const checkedAll = params => {
+      const checkboxes = document.getElementsByName("agreeTerms");
+
+      checkboxes.forEach(item => {
+        item.checked = params.checked;
+      });
+    };
+  </script>
+</body>
+
+</html>

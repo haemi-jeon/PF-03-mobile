@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+  <title>사전설문02</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header_title">
+        <p class="ellipsis">사전 설문</p>
+      </h1>
+      <button type="button" class="btn btn_end">
+        <i class="ico close"></i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content phase">
+        <div class="content__header">
+          <div class="phase__title">
+            웰체크 다이어트를 결심하게 된<br />
+            이유가 무엇인가요?
+          </div>
+          <div class="phase__indicator-line">
+            <p class="phase__indicator-line--current" style="width: calc((100% / 13) * 2);">현재 단계</p>
+          </div>
+        </div>
+        <div class="content__body">
+          <div class="form">
+            <ul class="form__check-box">
+              <li class="form__check">
+                <input type="radio" id="btnCheck01" name="btnCheck" class="btn-check" />
+                <label for="btnCheck01" class="btn">전성기 시절 복귀</label>
+              </li>
+              <li class="form__check">
+                <input type="radio" id="btnCheck02" name="btnCheck" class="btn-check" />
+                <label for="btnCheck02" class="btn">목표한 옷 착용</label>
+              </li>
+              <li class="form__check">
+                <input type="radio" id="btnCheck03" name="btnCheck" class="btn-check" />
+                <label for="btnCheck03" class="btn">체지방 감량</label>
+              </li>
+              <li class="form__check">
+                <input type="radio" id="btnCheck04" name="btnCheck" class="btn-check" />
+                <label for="btnCheck04" class="btn">취업</label>
+              </li>
+              <li class="form__check">
+                <input type="radio" id="btnCheck05" name="btnCheck" class="btn-check" />
+                <label for="btnCheck05" class="btn">건강</label>
+              </li>
+              <li class="form__check">
+                <input type="radio" id="btnCheck06" name="btnCheck" class="btn-check" />
+                <label for="btnCheck06" class="btn">체력/활력</label>
+              </li>
+              <li class="form__check">
+                <input type="radio" id="btnCheck07" name="btnCheck" class="btn-check" />
+                <label for="btnCheck07" class="btn">특별한 날</label>
+              </li>
+              <li class="form__check form__check-etc">
+                <!-- 기타 체크되면 .form__check-etc--active 추가 -->
+                <input type="radio" id="btnCheckEtc" name="btnCheck" class="btn-check" />
+                <label for="btnCheckEtc" class="btn">기타</label>
+                <input type="text" class="form-control" placeholder="직접 입력하세요." />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- layer -->
+    <div class="layer btn-layer">
+      <div class="btn-area">
+        <button type="button" class="btn btn_white">이전</button>
+        <button type="button" class="btn btn_primary">다음</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- layer 높이에 따라 container 높이 재설정 -->
+  <script>
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
+</body>
+
+</html>

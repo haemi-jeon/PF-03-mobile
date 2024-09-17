@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+  <title>커뮤니티_상세</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_start">
+        <i class="ico back">뒤로</i>
+      </button>
+      <h1 class="header_title">
+        <p class="ellipsis">게시글</p>
+      </h1>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content">
+        <div class="feed">
+          <div class="feed__header">
+            <div class="user-img">
+              <img src="../assets/images/dummy-profile.jpg" alt="프로필사진" />
+            </div>
+            <div class="user-info">
+              <p class="nickname">신성한 웰다<i class="ico coach_mark"></i></p>
+              <p class="create-at">
+                <span class="date">2023.05.08</span>
+                <span class="time">13:29</span>
+              </p>
+            </div>
+            <div class="dropdown dropdown-edit">
+              <button type="button" class="btn" data-bs-toggle="dropdown">
+                <i class="ico meatball_gray"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="javascript:void(0)" class="dropdown-item">
+                    <i class="ico content_edit"></i>
+                    <span>수정</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="dropdown-item">
+                    <i class="ico content_delete"></i>
+                    <span>삭제</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="feed__body">
+            <h5 class="feed__title">어버이날 부모님과~~</h5>
+            <p class="feed__content">어버이날 기념으로 부모님께 차려드린 밥상~ 아버지가 좋아하시는 제육 볶음이랑 엄마가 좋아하시는 퓨전 파스타!<br />
+              효도를 위해 다이어트 식단은 오늘 잠시 쉬어갑니다용^.^</p>
+            <div class="attachment--x-scroll">
+              <ul>
+                <li>
+                  <a href="./04_00_파일뷰어.html" target="_blank">
+                    <img src="../assets/images/dummy-community.jpg" alt="커뮤니티 컨텐츠 이미지" />
+                  </a>
+                </li>
+                <li>
+                  <a href="./04_00_파일뷰어.html" target="_blank">
+                    <img src="../assets/images/dummy-profile.jpg" alt="커뮤니티 컨텐츠 이미지" />
+                  </a>
+                </li>
+                <li>
+                  <a href="./04_00_파일뷰어.html" target="_blank">
+                    <img src="../assets/images/img_goal.jpg" alt="커뮤니티 컨텐츠 이미지" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="feed__footer">
+            <div class="btn_area">
+              <button type="button" class="btn">
+                <i class="ico like"></i>
+                <span>6</span>
+              </button>
+              <button type="button" class="btn active">
+                <i class="ico comment"></i>
+                <span>16</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="comment-box">
+          <h5 class="title">
+            <span>댓글</span>
+            <span>16</span>
+          </h5>
+          <ul>
+            <li>
+              <div class="comment">
+                <p class="user-img">
+                  <img src="../assets/images/dummy-goal.png" alt="프로필사진" />
+                </p>
+                <div class="comment_main">
+                  <div class="user-info">
+                    <p class="nickname">웰다코치입니다<i class="ico coach_mark"></i></p>
+                    <p class="create-at">
+                      <span class="date">2023.05.08</span>
+                      <span class="time">13:29</span>
+                    </p>
+                  </div>
+                  <div class="desc">
+                    우와~ 웰다님 정말 금손이세요! 부모님이 좋아하실 것 같아요 :)
+                  </div>
+                  <div class="btn_area">
+                    <button type="button" class="btn btn--active">
+                      <span>좋아요</span>
+                      <span>3개</span>
+                    </button>
+                    <button type="button" class="btn">
+                      <span>답글 달기</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="comment">
+                <p class="user-img">
+                  <img src="../assets/images/dummy-profile.jpg" alt="프로필사진" />
+                </p>
+                <div class="comment_main">
+                  <div class="user-info">
+                    <p class="nickname">
+                      <span>글쓴이입니다</span>
+                      <span class="badge">글쓴이</span>
+                    </p>
+                    <p class="create-at">
+                      <span class="date">2023.05.08</span>
+                      <span class="time">13:29</span>
+                    </p>
+                  </div>
+                  <div class="desc">
+                    우와 댓글 너무 감사합니다!ㅎㅎ 힘이 나네요!
+                  </div>
+                  <div class="btn_area">
+                    <button type="button" class="btn">
+                      <span>좋아요</span>
+                    </button>
+                    <button type="button" class="btn">
+                      <span>답글 달기</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="comment">
+                <p class="user-img">
+                  <img src="../assets/images/dummy-profile02.png" alt="프로필사진" />
+                </p>
+                <div class="comment_main">
+                  <div class="user-info">
+                    <p class="nickname">신성한 웰다</p>
+                    <p class="create-at">
+                      <span class="date">2023.05.08</span>
+                      <span class="time">13:29</span>
+                    </p>
+                  </div>
+                  <div class="desc">
+                    우와~ 웰다님 정말 금손이세요! 부모님이 좋아하실 것 같아요 :)
+                  </div>
+                  <div class="btn_area">
+                    <button type="button" class="btn">
+                      <span>좋아요</span>
+                      <span>2개</span>
+                    </button>
+                    <button type="button" class="btn">
+                      <span>답글 달기</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="comment">
+                <p class="user-img">
+                  <img src="../assets/images/dummy-profile02.png" alt="프로필사진" />
+                </p>
+                <div class="comment_main">
+                  <div class="user-info">
+                    <p class="nickname">신성한 웰다</p>
+                    <p class="create-at">
+                      <span class="date">2023.05.08</span>
+                      <span class="time">13:29</span>
+                    </p>
+                  </div>
+                  <div class="desc">
+                    우와~ 웰다님 정말 금손이세요! 부모님이 좋아하실 것 같아요 :)
+                  </div>
+                  <div class="btn_area">
+                    <button type="button" class="btn">
+                      <span>좋아요</span>
+                      <span>1개</span>
+                    </button>
+                    <button type="button" class="btn">
+                      <span>답글 달기</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- layer -->
+    <div class="layer comment-layer">
+      <!--
+        레이어헤더 제어 .comment-layer--header
+        등록버튼/placeholder 제어 .comment-layer--writing
+      -->
+      <div class="layer__header">
+        <p class="title">
+          <strong>이번엔꼭뺀다</strong>
+          <span class="ellipsis">님에게 답글 다는 중</span>
+          <span class="loading-dot">
+            <i class="ico dot"></i>
+            <i class="ico dot"></i>
+            <i class="ico dot"></i>
+          </span>
+        </p>
+        <button type="button" class="btn">
+          <i class="ico clear"></i>
+        </button>
+      </div>
+      <div class="layer__body">
+        <div class="textbox">
+          <div class="textbox__input" contenteditable="true" aria-multiline="true" aria-required="true" role="textbox">
+          </div>
+          <button type="button" class="btn">등록</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 변경 감지되면 실행할 함수 (.layer 높이 변경되면 .container 높이 재설정)
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
+</body>
+
+</html>

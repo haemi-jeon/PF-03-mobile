@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>이메일인증</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn_end">
+        <i class="ico close">닫기</i>
+      </button>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="sign_up">
+        <div class="title">
+          <h2>회원가입을 위한<br />이메일 인증이<br />필요합니다</h2>
+        </div>
+        <form class="form_area">
+          <div class="form-group">
+            <label class="form-label asterisk">이메일</label>
+            <input type="email" class="form-control" value="wellcheck@mcirlcle.biz" placeholder="이메일 주소를 입력해주세요"
+              required />
+          </div>
+          <div class="form-group">
+            <label class="form-label asterisk">인증번호</label>
+            <div class="certification_box">
+              <div class="count_input">
+                <input type="number" pattern="\d*" class="form-control" placeholder="인증번호를 입력해주세요"
+                  autocomplete="one-time-code" required />
+                <span class="time">10:00</span>
+              </div>
+              <button type="button" class="btn btn_outline_primary" data-bs-toggle="modal"
+                data-bs-target="#modalResendCode">재전송</button>
+            </div>
+            <p class="helper_text d-block">인증시간이 만료되었습니다. 다시 시도해주세요!</p>
+            <!-- 인증시간만료 ? .d-block : d-none -->
+          </div>
+        </form>
+        <div class="btn_area">
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+            data-bs-target="#modalDiscord">인증완료</button>
+        </div>
+        <a href="javascript:void(0)" class="back_link">전화번호 인증으로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : 인증번호재발송 -->
+  <div class="modal fade" id="modalResendCode" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">알림</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p>인증번호를 재발송했습니다.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 인증번호불일치 -->
+  <div class="modal fade" id="modalDiscord" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">알림</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p>인증번호가 일치하지 않습니다.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 인증시간초과 -->
+  <div class="modal fade" id="modalSignedPhone" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">알림</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p>
+              인증번호 확인 시간을 초과했습니다.<br />
+              인증번호를 다시 발송해주세요.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+  <title>홈</title>
+  <!-- StyleSheets -->
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper with__tabbar">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__btn-group">
+        <button type="button" class="btn btn-alarm active">알림</button>
+        <button type="button" class="btn btn-my">내정보</button>
+      </div>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <div class="content home">
+        <div class="calendar calendar--top">
+          <div class="calendar__month">
+            <p class="calendar__month-value">23년 12월</p>
+            <button type="button" class="btn calendar__month-btn" data-bs-toggle="modal"
+              data-bs-target="#modalReactCalendar">
+              <i class="ico arrow_down"></i>
+            </button>
+          </div>
+          <ul class="calendar__week">
+            <li class="recorded">
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">월</span>
+                <span class="date">22</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">화</span>
+                <span class="date">23</span>
+              </a>
+            </li>
+            <li class="selected recorded">
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">수</span>
+                <span class="date">24</span>
+              </a>
+            </li>
+            <li class="today recorded">
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">목</span>
+                <span class="date">25</span>
+              </a>
+            </li>
+            <li class="disabled">
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">금</span>
+                <span class="date">26</span>
+              </a>
+            </li>
+            <li class="disabled">
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">토</span>
+                <span class="date">27</span>
+              </a>
+            </li>
+            <li class="disabled">
+              <a href="javascript:void(0)" class="calendar__link">
+                <span class="day">일</span>
+                <span class="date">28</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <section class="section section--essential">
+            <div class="section-header">
+              <h3 class="title">필수 체크</h3>
+            </div>
+            <div class="section-body">
+              <div class="swiper swiper--slot">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="banner banner--libre">
+                      <a href="javascript:void(0)" class="banner__link">
+                        <strong>리브레 연결하기</strong>
+                        <span>시작 전, 리브레를 연결해주세요.</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="banner banner--survey">
+                      <a href="javascript:void(0)" class="banner__link">
+                        <strong>설문 이어하기</strong>
+                        <span>설문조사를 완료해주세요.</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="banner banner--ot">
+                      <a href="javascript:void(0)" class="banner__link">
+                        <strong>OT 수강하기</strong>
+                        <span>웰다 OT 수강하고 시작하세요!</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="banner banner--check">
+                      <a href="javascript:void(0)" class="banner__link">
+                        <strong>증상 체크하기</strong>
+                        <span>전과 달라진 변화를 체크하세요!</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="banner banner--alert">
+                      <a href="javascript:void(0)" class="banner__link">
+                        <strong>프로그램 종료 임박</strong>
+                        <span>목표 달성을 위해 다시 도전해보세요!</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </section>
+          <section class="section section--blood-sugar">
+            <div class="section-header">
+              <h3 class="title">혈당 리포트</h3>
+            </div>
+            <div class="section-body">
+              <div class="help-area">
+                <button type="button" class="btn">
+                  <i class="ico question"></i>
+                  <span>연속혈당측정기 사용방법</span>
+                </button>
+                <button type="button" class="btn">
+                  <i class="ico refresh"></i>
+                  <strong>새로고침</strong>
+                </button>
+              </div>
+              <div class="graph">
+
+                <!-- CASE: 구매 이력 없는 유저가 설문 중도 종료 시 -->
+                <!-- <div class="graph__help">
+                  <p>
+                    <span class="text-primary">사전설문을 완료</span>해야<br />
+                    모든 기능이 활성화됩니다.
+                  </p>
+                </div> -->
+
+                <!-- CASE: 구매 이력 있는 유저가 설문 중도 종료 시 -->
+                <!-- <div class="graph__help">
+                  <p>
+                    <span class="text-primary">사전설문을 완료</span>해야<br />
+                    모든 기능이 활성화됩니다.
+                  </p>
+                  <button type="button" class="btn btn_primary">패키지 수령 완료</button>
+                </div> -->
+
+                <!-- CASE: 구독 종료 후 168시간 이내 -->
+                <!-- <div class="graph__help">
+                  <p>
+                    연속혈당측정기를 다시 연결하면<br />
+                    이용할 수 있어요.
+                  </p>
+                  <a href="javascript:void(0)" class="link">연속혈당측정기 구매하러 가기</a>
+                </div> -->
+
+                <!-- CASE: 구독 종료 후 168시간 초 -->
+                <!-- <div class="graph__help">
+                  <p>
+                    웰다와 함께<br />
+                    건강한 다이어트 시작해보세요!
+                  </p>
+                  <button type="button" class="btn btn_primary">구독하기</button>
+                  <a href="javascript:void(0)" class="link">아직 상품 구매 전이신가요?</a>
+                </div> -->
+
+                <!-- CASE: 시작일 있는 구독태그 입력 -->
+                <div class="graph__help">
+                  <p>
+                    구독코드 인증을 완료했어요.<br />
+                    <span class="text-primary">00월 00일 aaa요일</span>부터<br />
+                    웰다 여정을 다시 시작할 수 있어요!
+                  </p>
+                </div>
+
+                <div class="graph__visual">
+                  <canvas id="chart" style="display: block; width: 100%; height: 230px;"></canvas>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section section--timer">
+            <div class="timer"> <!-- 목표시간 달성 .timer--complete -->
+              <div class="timer__summary">
+                <div class="timer__state">간헐적 단식 진행 중</div>
+                <div class="timer__time">
+                  <i class="ico clock"></i>
+                  <span>18:00 ~ 06:00</span>
+                </div>
+                <button type="button" class="btn btn_white">
+                  <i class="ico close-gray"></i>
+                  <span>그만 할래요</span>
+                </button>
+                <!-- <button type="button" class="btn btn_primary">
+                  <i class="ico close"></i>
+                  <span>기록하기</span>
+                </button> -->
+              </div>
+              <div class="timer__visual">
+                <div class="timer__counter">
+                  <p>현재까지</p>
+                  <p class="timer__counter-value">08 : 14 : 31</p>
+                </div>
+                <div class="timer__circle">
+                  <!-- react-customizable-progressbar -->
+                  <div class="RCP " style="position: relative; width: 142px;"><svg width="142" height="142"
+                      viewBox="0 0 142 142" style="transform: rotate(-90deg);">
+                      <circle cx="71" cy="71" r="60" fill="none" stroke="#eef0ff" stroke-width="6"
+                        stroke-dasharray="376.99111843077515, 376.99111843077515" stroke-linecap="round"
+                        class="RCP__track" style="transition: all 0s ease 0s;"></circle>
+                      <circle cx="71" cy="71" r="60" fill="none" stroke="#6053f3" stroke-width="6"
+                        stroke-dasharray="376.99111843077515, 376.99111843077515" stroke-dashoffset="0"
+                        stroke-linecap="round" class="RCP__progress" style="transition: all 1.5s ease 0.5s;"></circle>
+                      <circle cx="120" cy="50%" r="6" fill="white" stroke="#6053f3" stroke-width="5"
+                        class="RCP__pointer"
+                        style="transform-origin: 50% 50%; transform: rotate(360deg) translate(11px); transition: all 1.5s ease 0.5s;">
+                      </circle>
+                    </svg>
+                  </div>
+                  <!-- // react-customizable-progressbar -->
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section section--contents">
+            <div class="section-header">
+              <h3 class="title">오늘의 컨텐츠</h3>
+              <button type="button" class="btn">
+                <span>더보기</span>
+                <strong>+</strong>
+              </button>
+            </div>
+            <div class="section-body">
+              <div id="swiperTwo" class="swiper swiper--slot">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="contents">
+                      <div class="contents__title">무료 컨텐츠 무료 컨텐츠 무료 컨텐츠 무료 컨텐츠</div>
+                      <button type="button" class="btn btn_primary">보기</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="contents contents--complete">
+                      <div class="contents__title">무료 컨텐츠</div>
+                      <button type="button" class="btn btn_primary">완료!</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="contents contents--disabled">
+                      <div class="contents__title">무료 컨텐츠</div>
+                      <button type="button" class="btn btn_primary" disabled>보기</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="contents contents--curriculum">
+                      <div class="contents__title">커리큘럼 컨텐츠</div>
+                      <button type="button" class="btn btn_primary">보기</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="contents contents--curriculum contents--disabled">
+                      <div class="contents__title">커리큘럼 컨텐츠</div>
+                      <button type="button" class="btn btn_primary" disabled>완료!</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="contents contents--non-curriculum">
+                      <div class="contents__title">비커리큘럼 컨텐츠</div>
+                      <button type="button" class="btn btn_primary">보기</button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="contents contents--non-curriculum contents--disabled">
+                      <div class="contents__title">비커리큘럼 컨텐츠</div>
+                      <button type="button" class="btn btn_primary" disabled>완료!</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </section>
+          <section class="section section--mission">
+            <div class="section-header">
+              <h3 class="title">오늘의 미션</h3>
+            </div>
+            <div class="section-body">
+              <!-- <ul class="mission-box">
+                <li class="none-data">
+                  오늘의 미션이 없습니다.
+                </li>
+              </ul> -->
+              <ul class="mission-box">
+                <li class="mission">
+                  <p class="mission__ico mission__ico--meal"></p>
+                  <p class="mission__name">
+                    <span>식·단·지 순서로 식사하기</span>
+                  </p>
+                  <button type="button" class="btn mission__btn">미션 버튼</button>
+                </li>
+                <li class="mission mission--complete">
+                  <p class="mission__ico mission__ico--vinegar"></p>
+                  <p class="mission__name">
+                    <span>식사 후 식초 한 잔 마시기</span>
+                  </p>
+                  <button type="button" class="btn mission__btn">미션 버튼</button>
+                </li>
+                <li class="mission">
+                  <p class="mission__ico mission__ico--exercise"></p>
+                  <p class="mission__name">
+                    <span>숨이 차는 운동하기</span>
+                  </p>
+                  <button type="button" class="btn mission__btn">미션 버튼</button>
+                </li>
+                <li class="mission mission--essential">
+                  <p class="mission__ico mission__ico--fasting"></p>
+                  <p class="mission__name">
+                    <small class="text-orange">필수미션</small>
+                    <span>12시간 단식하기</span>
+                  </p>
+                  <button type="button" class="btn mission__btn">미션 버튼</button>
+                </li>
+                <li class="mission mission--essential mission--complete">
+                  <p class="mission__ico mission__ico--alcohol"></p>
+                  <p class="mission__name">
+                    <small class="text-orange">필수미션</small>
+                    <span>금주하기</span>
+                  </p>
+                  <button type="button" class="btn mission__btn">미션 버튼</button>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="section section--record">
+            <div class="section-header">
+              <h3 class="title">
+                <span>오늘의 기록</span>
+                <small>나의 활동을 한 눈에 확인하세요!</small>
+              </h3>
+            </div>
+            <div class="section-body">
+              <!-- <ul class="record-box">
+                <li class="record none-data">
+                  등록된 기록이 없습니다.
+                </li>
+              </ul> -->
+              <ul class="record-box">
+                <li class="record record--body">
+                  <a href="javascript:void(0)" class="record__link">
+                    <i class="record__ico"></i>
+                    <div class="record__desc">
+                      <small>07:00</small>
+                      <b>허리 사이즈, 58cm</b>
+                    </div>
+                    <div class="record__value record__value--increase">2.3 cm</div>
+                  </a>
+                </li>
+                <li class="record record--fasting record--fasting-start"> <!-- 단식시작 .record--fasting-start -->
+                  <a href="javascript:void(0)" class="record__link">
+                    <i class="record__ico"></i>
+                    <div class="record__desc">
+                      <small>14:00</small>
+                      <b>간헐적 단식 시작</b>
+                    </div>
+                  </a>
+                </li>
+                <li class="record record--body record--fasting"> <!-- 단식기간 .record--fasting -->
+                  <a href="javascript:void(0)" class="record__link">
+                    <i class="record__ico"></i>
+                    <div class="record__desc">
+                      <small>07:00</small>
+                      <b>체지방률, 31%</b>
+                    </div>
+                    <div class="record__value record__value--decrease">0.3 %</div>
+                  </a>
+                </li>
+                <li class="record record--meal record--fasting"> <!-- 단식기간 .record--fasting -->
+                  <a href="javascript:void(0)" class="record__link">
+                    <!-- <i class="record__ico"></i> -->
+                    <img class="record__ico" src="../assets/images/dummy-meal.png" alt="기록 이미지" />
+                    <div class="record__desc">
+                      <small>07:00</small>
+                      <b>스타벅스 아이스 아메리카노 외 +3</b>
+                      <ul>
+                        <li class="badge">식·단·지</li>
+                        <li class="badge">식초</li>
+                        <li class="badge">식후활동</li>
+                      </ul>
+                    </div>
+                    <div class="record__value record__value--sugar">+78</div>
+                  </a>
+                </li>
+                <li class="record record--fasting record--fasting-end"> <!-- 단식 종료 .record--fasting-end -->
+                  <a href="javascript:void(0)" class="record__link">
+                    <i class="record__ico"></i>
+                    <div class="record__desc">
+                      <small>10:00</small>
+                      <b>간헐적 단식 종료</b>
+                    </div>
+                    <div class="record__value">12시간</div>
+                  </a>
+                </li>
+                <li class="record record--exercise">
+                  <a href="javascript:void(0)" class="record__link">
+                    <i class="record__ico"></i>
+                    <div class="record__desc">
+                      <small>07:00</small>
+                      <b>런닝머신</b>
+                      <ul>
+                        <li class="badge">고강도 운동</li>
+                      </ul>
+                    </div>
+                    <div class="record__value">60분</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="section section--banner">
+            <div class="swiper swiper--banner">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../assets/images/banner01.png" alt="배너 이미지" />
+                  <p class="text_area">
+                    <strong>웰다 친구초대 이벤트</strong>
+                    <span>친구초대하면 다양한 선물이 팡팡!</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <img src="../assets/images/banner01.png" alt="배너 이미지" />
+                  <p class="text_area">
+                    <strong>웰다 친구초대 이벤트</strong>
+                    <span>친구초대하면 다양한 선물이 팡팡!</span>
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <img src="../assets/images/banner01.png" alt="배너 이미지" />
+                  <p class="text_area">
+                    <strong>웰다 친구초대 이벤트</strong>
+                    <span>친구초대하면 다양한 선물이 팡팡!</span>
+                  </p>
+                </div>
+              </div>
+              <button type="button" class="btn btn_pause">
+                <i class="ico pause"></i>
+              </button>
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Tab_Bar -->
+    <nav class="tab_bar">
+      <a href="javascript:void(0)" class="tab_link active">
+        <span class="ico home"></span>
+        <span class="text">홈</span>
+      </a>
+      <a href="javascript:void(0)" class="tab_link">
+        <span class="ico report"></span>
+        <span class="text">기록</span>
+      </a>
+      <button type="button" class="btn tab__btn" data-bs-toggle="modal" data-bs-target="#modalShowRecordInput">
+        <span class="ico plus"></span>
+      </button>
+      <a href="javascript:void(0)" class="tab_link">
+        <span class="ico chat"></span>
+        <span class="text">채팅</span>
+      </a>
+      <a href="javascript:void(0)" class="tab_link">
+        <span class="ico community"></span>
+        <span class="text">커뮤니티</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- MODAL : react-datepicker -->
+  <div class="modal fade" id="modalReactCalendar" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog bottom_sheet">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="react-datepicker">
+            <div class="react-datepicker__triangle"></div>
+            <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+            <button type="button" class="react-datepicker__navigation react-datepicker__navigation--previous"
+              aria-label="Previous Month">
+              <span class="react-datepicker__navigation-icon react-datepicker__navigation-icon--previous">Previous
+                Month</span>
+            </button>
+            <button type="button" class="react-datepicker__navigation react-datepicker__navigation--next"
+              aria-label="Next Month"><span
+                class="react-datepicker__navigation-icon react-datepicker__navigation-icon--next">Next
+                Month</span></button>
+            <div class="react-datepicker__month-container">
+              <div class="react-datepicker__header">
+                <div class="react-datepicker__current-month">1월 2024</div>
+                <div class="react-datepicker__header__dropdown react-datepicker__header__dropdown--scroll"></div>
+                <div class="react-datepicker__day-names">
+                  <div class="react-datepicker__day-name">월</div>
+                  <div class="react-datepicker__day-name">화</div>
+                  <div class="react-datepicker__day-name">수</div>
+                  <div class="react-datepicker__day-name">목</div>
+                  <div class="react-datepicker__day-name">금</div>
+                  <div class="react-datepicker__day-name">토</div>
+                  <div class="react-datepicker__day-name">일</div>
+                </div>
+              </div>
+              <div class="react-datepicker__month" aria-label="month  2024-01" role="listbox">
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--001" tabindex="-1"
+                    aria-label="Choose 2024년 1월 1일 월요일" role="option" aria-disabled="false" aria-selected="false">1
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--002" tabindex="-1"
+                    aria-label="Choose 2024년 1월 2일 화요일" role="option" aria-disabled="false" aria-selected="false">2
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--003" tabindex="-1"
+                    aria-label="Choose 2024년 1월 3일 수요일" role="option" aria-disabled="false" aria-selected="false">3
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--004" tabindex="-1"
+                    aria-label="Choose 2024년 1월 4일 목요일" role="option" aria-disabled="false" aria-selected="false">4
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--005" tabindex="-1"
+                    aria-label="Choose 2024년 1월 5일 금요일" role="option" aria-disabled="false" aria-selected="false">5
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--006 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 6일 토요일" role="option" aria-disabled="false"
+                    aria-selected="false">6</div>
+                  <div class="react-datepicker__day react-datepicker__day--007 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 7일 일요일" role="option" aria-disabled="false"
+                    aria-selected="false">7</div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--008" tabindex="-1"
+                    aria-label="Choose 2024년 1월 8일 월요일" role="option" aria-disabled="false" aria-selected="false">8
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--009" tabindex="-1"
+                    aria-label="Choose 2024년 1월 9일 화요일" role="option" aria-disabled="false" aria-selected="false">9
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--010" tabindex="-1"
+                    aria-label="Choose 2024년 1월 10일 수요일" role="option" aria-disabled="false" aria-selected="false">10
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--recorded"
+                    tabindex="-1" aria-label="Choose 2024년 1월 11일 목요일" role="option" aria-disabled="false"
+                    aria-selected="false">11
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--selected react-datepicker__day--recorded"
+                    tabindex="-1" aria-label="Choose 2024년 1월 12일 금요일" role="option" aria-disabled="false"
+                    aria-selected="false">12
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--013 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 13일 토요일" role="option" aria-disabled="false"
+                    aria-selected="false">13</div>
+                  <div class="react-datepicker__day react-datepicker__day--014 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 14일 일요일" role="option" aria-disabled="false"
+                    aria-selected="false">14</div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--015" tabindex="-1"
+                    aria-label="Choose 2024년 1월 15일 월요일" role="option" aria-disabled="false" aria-selected="false">15
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--016" tabindex="-1"
+                    aria-label="Choose 2024년 1월 16일 화요일" role="option" aria-disabled="false" aria-selected="false">16
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--017" tabindex="-1"
+                    aria-label="Choose 2024년 1월 17일 수요일" role="option" aria-disabled="false" aria-selected="false">17
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--018" tabindex="-1"
+                    aria-label="Choose 2024년 1월 18일 목요일" role="option" aria-disabled="false" aria-selected="false">18
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--019" tabindex="-1"
+                    aria-label="Choose 2024년 1월 19일 금요일" role="option" aria-disabled="false" aria-selected="false">19
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 20일 토요일" role="option" aria-disabled="false"
+                    aria-selected="false">20</div>
+                  <div class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Choose 2024년 1월 21일 일요일" role="option" aria-disabled="false"
+                    aria-selected="false">21</div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--022" tabindex="-1"
+                    aria-label="Choose 2024년 1월 22일 월요일" role="option" aria-disabled="false" aria-selected="false">22
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--023" tabindex="-1"
+                    aria-label="Choose 2024년 1월 23일 화요일" role="option" aria-disabled="false" aria-selected="false">23
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--selected react-datepicker__day--today react-datepicker__day--recorded"
+                    tabindex="0" aria-label="Choose 2024년 1월 24일 수요일" role="option" aria-disabled="false"
+                    aria-current="date" aria-selected="true">
+                    24
+                  </div>
+                  <div class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 25일 목요일" role="option" aria-disabled="true"
+                    aria-selected="false">25</div>
+                  <div class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 26일 금요일" role="option" aria-disabled="true"
+                    aria-selected="false">26</div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Not available 2024년 1월 27일 토요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    27
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--disabled react-datepicker__day--weekend"
+                    tabindex="-1" aria-label="Not available 2024년 1월 28일 일요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    28
+                  </div>
+                </div>
+                <div class="react-datepicker__week">
+                  <div class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 29일 월요일" role="option" aria-disabled="true"
+                    aria-selected="false">29</div>
+                  <div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 30일 화요일" role="option" aria-disabled="true"
+                    aria-selected="false">30</div>
+                  <div class="react-datepicker__day react-datepicker__day--031 react-datepicker__day--disabled"
+                    tabindex="-1" aria-label="Not available 2024년 1월 31일 수요일" role="option" aria-disabled="true"
+                    aria-selected="false">31</div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 1일 목요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    1
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--disabled react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 2일 금요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    2
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--003 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 3일 토요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    3
+                  </div>
+                  <div
+                    class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--disabled react-datepicker__day--weekend react-datepicker__day--outside-month"
+                    tabindex="-1" aria-label="Not available 2024년 2월 4일 일요일" role="option" aria-disabled="true"
+                    aria-selected="false">
+                    4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn_primary flex-fill">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 입력 -->
+  <div class="modal fade" id="modalShowRecordInput" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog--input">
+      <div class="modal-content">
+        <ul>
+          <li class="input input--fasting">
+            <button type="button" class="btn">단식</button>
+          </li>
+          <li class="input input--record">
+            <button type="button" class="btn">신체기록</button>
+          </li>
+          <li class="input input--meal">
+            <button type="button" class="btn">식사</button>
+          </li>
+          <li class="input input--exercise">
+            <button type="button" class="btn">운동</button>
+          </li>
+        </ul>
+        <button type="button" class="tab__btn tab__btn--close" data-bs-dismiss="modal">
+          <span class="ico plus"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="../modules/jquery_3.5.1.min.js"></script>
+  <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="../modules/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // 기본 스와이퍼
+    const swiper = new Swiper(".swiper--slot", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+    // 2개씩 보여지는 스와이퍼
+    const swiperTwo = new Swiper("#swiperTwo", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      slidesPerView: 2,
+      spaceBetween: 8,
+    });
+
+    /* 이벤트 스와이프 */
+    const swiperBanner = new Swiper(".swiper--banner", {
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

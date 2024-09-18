@@ -8,16 +8,19 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
   <title>내정보_컨텐츠_관심</title>
+  <title>modal</title>
   <!-- StyleSheets -->
-  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
 </head>
 
 <body>
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <button type="button" class="btn btn_start" onclick="window.history.back()">
         <i class="ico back">뒤로</i>
       </button>
       <h1 class="header_title">
@@ -28,7 +31,8 @@
     <div class="container">
       <div class="form-group">
         <div class="clearable">
-          <input type="text" class="form-control search" placeholder="검색어를 입력해주세요." oninput="handleInputChange(this)" />
+          <input type="text" class="form-control search" placeholder="검색어를 입력해주세요." value="연속혈당측정기"
+            oninput="handleInputChange(this)" />
           <button type="button" class="btn input_clear" onclick="clearInputValue(this)"></button>
         </div>
       </div>

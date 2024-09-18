@@ -18,7 +18,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <button type="button" class="btn btn_start" onclick="window.history.back()">
         <i class="ico back">뒤로</i>
       </button>
       <h1 class="header_title">
@@ -59,9 +59,12 @@
             <div class="record-body">
               <div class="ruler">
                 <h5 class="ruler__title">현재 허리 사이즈를 입력해주세요.</h5>
+                <div class="ruler__value">
+                  <span>40</span>
+                  <span class="ruler__value-unit">cm</span>
+                </div>
                 <div class="ruler__visual">
-                  <!-- 줄자 모양 영역 -->
-                  <!-- // 줄자 모양 영역 -->
+                  <img src="../assets/images/dummy-ruler.png" alt="ruler" width="100%" />
                 </div>
               </div>
               <div class="help-area">
@@ -73,8 +76,9 @@
                 <small>※ 이 때, 맨살에 하며 줄자를 당기지 않도록 해요.</small>
               </div>
               <div class="layer btn-layer">
-                <button type="button" class="btn btn_outline_primary">기록 삭제</button>
-                <button type="button" class="btn btn_primary">저장</button>
+                <button type="button" class="btn btn_outline_primary" onclick="location.href='02_01_기록_신체_목록.html'">기록
+                  삭제</button>
+                <button type="button" class="btn btn_primary" onclick="location.href='02_01_기록_신체_목록.html'">저장</button>
               </div>
             </div>
           </div>
@@ -123,8 +127,9 @@
                 </div>
               </div>
               <div class="layer btn-layer">
-                <button type="button" class="btn btn_outline_primary">기록 삭제</button>
-                <button type="button" class="btn btn_primary">저장</button>
+                <button type="button" class="btn btn_outline_primary" onclick="location.href='02_01_기록_신체_목록.html'">기록
+                  삭제</button>
+                <button type="button" class="btn btn_primary" onclick="location.href='02_01_기록_신체_목록.html'">저장</button>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@
   <div class="wrapper with__tabbar">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <button type="button" class="btn btn_start" onclick="window.history.back()">
         <i class="ico back">뒤로</i>
       </button>
       <h1 class="header_title">
@@ -71,16 +71,14 @@
               <h5 class="title">내 신체기록 변화</h5>
               <div class="graph">
                 <div class="graph__visual">
-                  <!-- 차트 영역 -->
-                  <canvas id="chart" style="display: block; width: 100%; height: 210px;"></canvas>
-                  <!-- // 차트 영역 -->
+                  <img src="../assets/images/dummy-graph.png" alt="graph" width="100%" />
                 </div>
-                <div class="graph__help">
+                <!-- <div class="graph__help">
                   <p>
                     등록된 정보가 없습니다.<br />
                     신체 기록을 등록해주세요.
                   </p>
-                </div>
+                </div> -->
                 <div class="graph__legend" style="position: absolute; top: 0; right: 0;">
                   <ul>
                     <li class="legend">허리 사이즈 (cm)</li>
@@ -88,53 +86,943 @@
                   </ul>
                 </div>
                 <div class="graph__tooltip" style="position: absolute; top: 40px; left: 160px;">
-                  <p class="value value--decreasing"> <!-- 감소 .value--decreasing || 증가 .value--increasing -->
+                  <p class="value value--decreasing">
                     <span>824.0 cm</span>
                     <small class="change">(-333.3cm)</small>
-                    <button type="button" class="btn">
+                    <button type="button" class="btn" onclick="location.href='02_01_기록_신체_수정.html'">
                       <i class="ico edit"></i>
                     </button>
                   </p>
                 </div>
-                <div class="graph__controller">
+                <!-- <div class="graph__controller">
                   <button type="button" class="btn graph__controller--prev">
                     <i class="ico arrow-prev"></i>
                   </button>
                   <button type="button" class="btn graph__controller--next">
                     <i class="ico arrow-next"></i>
                   </button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
           <div id="record02" class="tab-pane fade" tabindex="0">
-            record02
+            <div style="display: flex; justify-content: center; align-items: center; height: 400px;">native로 개발된 페이지
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Tab_Bar -->
     <nav class="tab_bar">
-      <a href="javascript:void(0)" class="tab_link active">
+      <a href="01_01_홈_.html" class="tab_link">
         <span class="ico home"></span>
         <span class="text">홈</span>
       </a>
-      <a href="javascript:void(0)" class="tab_link">
+      <a href="02_01_기록_신체_목록.html" class="tab_link active">
         <span class="ico report"></span>
         <span class="text">기록</span>
       </a>
-      <button type="button" class="btn tab__btn">
+      <button type="button" class="btn tab__btn" data-bs-toggle="modal" data-bs-target="#modalShowRecordInput">
         <span class="ico plus"></span>
       </button>
-      <a href="javascript:void(0)" class="tab_link">
+      <a href="javascript:void(0)" class="tab_link" onclick="alert('native로 개발이 진행되어 페이지가 없습니다')">
         <span class="ico chat"></span>
         <span class="text">채팅</span>
       </a>
-      <a href="javascript:void(0)" class="tab_link">
+      <a href="04_01_커뮤니티_목록.html" class="tab_link">
         <span class="ico community"></span>
         <span class="text">커뮤니티</span>
       </a>
     </nav>
+  </div>
+
+  <!-- MODAL : 입력 -->
+  <div class="modal fade" id="modalShowRecordInput" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog--input">
+      <div class="modal-content">
+        <ul>
+          <li class="input input--fasting">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalInputFasting">단식</button>
+          </li>
+          <li class="input input--record">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalInputRecord">신체기록</button>
+          </li>
+          <li class="input input--meal">
+            <button type="button" class="btn" onclick="alert('native로 개발이 진행되어 페이지가 없습니다')">식사</button>
+          </li>
+          <li class=" input input--exercise">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalInputExercise">운동</button>
+          </li>
+        </ul>
+        <button type="button" class="tab__btn tab__btn--close" data-bs-dismiss="modal">
+          <span class="ico plus"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 단식기록 -->
+  <div class="modal fade" id="modalInputFasting" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog bottom_sheet bottom_sheet--fasting">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">단식 기록</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="fasting">
+            <div class="fasting__summary">
+              <div class="fasting__summary-time">총 12시간</div>
+              <div class="fasting__summary-period">
+                <p><strong>· 8월 14일 12:00</strong> <span>부터</span></p>
+                <p><strong>· 8월 15일 00:00</strong> <span>까지</span></p>
+              </div>
+            </div>
+            <div class="help-area">
+              <i class="ico info"></i>
+              <span>단식 시작, 종료일은 최소 12시간이 되도록 설정해야 합니다.</span>
+            </div>
+            <div id="accordionFasting" class="accordion fasting__accordion">
+              <div class="accordion-item">
+                <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne">단식 시작</button>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFasting">
+                  <!-- react-mobile-picker -->
+                  <div style="padding: 0px 22px;">
+                    <div class="react-mobile-picker"
+                      style="height: 143px; position: relative; display: flex; justify-content: center; overflow: hidden; mask-image: linear-gradient(to top, transparent, transparent 5%, white 20%, white 80%, transparent 95%, transparent);">
+                      <div
+                        style="flex: 1 1 0%; max-height: 100%; transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 300ms; transform: translate3d(0px, -175.5px, 0px);">
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02월 14일 (수)</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02월 15일 (목)</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02월 16일 (금)</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02월 17일 (토)</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02월 18일 (일)</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02월 19일 (월)</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="selected">오늘</div>
+                        </div>
+                      </div>
+                      <div
+                        style="flex: 1 1 0%; max-height: 100%; transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 300ms; transform: translate3d(0px, -479.5px, 0px);">
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">00</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">01</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">03</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">04</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">05</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">06</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">07</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">08</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">09</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">10</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">11</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">12</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">13</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="selected">14</div>
+                        </div>
+                      </div>
+                      <div
+                        style="flex: 1 1 0%; max-height: 100%; transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 300ms; transform: translate3d(0px, -1657.5px, 0px);">
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">00</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">01</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">03</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">04</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">05</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">06</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">07</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">08</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">09</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">10</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">11</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">12</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">13</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">14</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">15</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">16</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">17</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">18</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">19</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">20</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">21</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">22</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">23</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">24</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">25</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">26</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">27</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">28</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">29</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">30</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">31</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">32</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">33</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">34</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">35</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">36</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">37</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">38</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">39</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">40</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">41</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">42</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">43</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">44</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="selected">45</div>
+                        </div>
+                      </div>
+                      <div
+                        style="height: 38px; margin-top: -19px; position: absolute; top: 50%; left: 0px; width: 100%; pointer-events: none;">
+                        <div
+                          style="position: absolute; inset: 0px auto auto 0px; width: 100%; height: 1px; background: rgb(217, 217, 217); transform: scaleY(0.5);">
+                        </div>
+                        <div
+                          style="position: absolute; inset: auto auto 0px 0px; width: 100%; height: 1px; background: rgb(217, 217, 217); transform: scaleY(0.5);">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // react-mobile-picker -->
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo">단식 종료</button>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFasting">
+                  <!-- react-mobile-picker -->
+                  <div style="padding: 0px 22px;">
+                    <div class="react-mobile-picker"
+                      style="height: 143px; position: relative; display: flex; justify-content: center; overflow: hidden; mask-image: linear-gradient(to top, transparent, transparent 5%, white 20%, white 80%, transparent 95%, transparent);">
+                      <div
+                        style="flex: 1 1 0%; max-height: 100%; transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 300ms; transform: translate3d(0px, 52.5px, 0px);">
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="selected">02월 21일 (수)</div>
+                        </div>
+                      </div>
+                      <div
+                        style="flex: 1 1 0%; max-height: 100%; transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 300ms; transform: translate3d(0px, -61.5px, 0px);">
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">03</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">04</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="selected">05</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">06</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">07</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">08</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">09</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">10</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">11</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">12</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">13</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">14</div>
+                        </div>
+                      </div>
+                      <div
+                        style="flex: 1 1 0%; max-height: 100%; transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.2, 1); transition-duration: 300ms; transform: translate3d(0px, -1657.5px, 0px);">
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">00</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">01</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">02</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">03</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">04</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">05</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">06</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">07</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">08</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">09</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">10</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">11</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">12</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">13</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">14</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">15</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">16</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">17</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">18</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">19</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">20</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">21</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">22</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">23</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">24</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">25</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">26</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">27</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">28</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">29</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">30</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">31</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">32</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">33</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">34</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">35</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">36</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">37</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">38</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">39</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">40</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">41</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">42</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">43</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">44</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="selected">45</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">46</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">47</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">48</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">49</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">50</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">51</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">52</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">53</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">54</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">55</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">56</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">57</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">58</div>
+                        </div>
+                        <div class="picker__item"
+                          style="height: 38px; display: flex; justify-content: center; align-items: center;">
+                          <div class="">59</div>
+                        </div>
+                      </div>
+                      <div
+                        style="height: 38px; margin-top: -19px; position: absolute; top: 50%; left: 0px; width: 100%; pointer-events: none;">
+                        <div
+                          style="position: absolute; inset: 0px auto auto 0px; width: 100%; height: 1px; background: rgb(217, 217, 217); transform: scaleY(0.5);">
+                        </div>
+                        <div
+                          style="position: absolute; inset: auto auto 0px 0px; width: 100%; height: 1px; background: rgb(217, 217, 217); transform: scaleY(0.5);">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // react-mobile-picker -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 신체기록 -->
+  <div class="modal fade" id="modalInputRecord" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog full">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="wrapper">
+            <!-- Header -->
+            <header class="header">
+              <h1 class="header_title">
+                <p class="ellipsis">신체 기록</p>
+              </h1>
+              <button type="button" class="btn btn_end" data-bs-dismiss="modal">
+                <i class="ico close">닫기</i>
+              </button>
+            </header>
+            <!-- Container -->
+            <div class="container">
+              <div class="content record">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link active" data-bs-toggle="tab" data-bs-target="#record01"
+                      role="tab">허리
+                      사이즈</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button type="button" class="nav-link" data-bs-toggle="tab" data-bs-target="#record02" tabindex="-1"
+                      role="tab">체성분</button>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div id="record01" class="tab-pane fade show active" tabindex="0">
+                    <div class="record-header">
+                      <div class="form_area">
+                        <div class="input-group input-group--calendar">
+                          <input type="text" class="form-control" value="2023. 12. 19 (화)" readonly />
+                          <button type="button" class="btn">
+                            <i class="ico drop-down"></i>
+                          </button>
+                        </div>
+                        <div class="input-group input-group--time">
+                          <input type="text" class="form-control" value="10:00" readonly />
+                          <button type="button" class="btn">
+                            <i class="ico drop-down"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="record-body">
+                      <div class="ruler">
+                        <h5 class="ruler__title">현재 허리 사이즈를 입력해주세요.</h5>
+                        <div class="ruler__value">
+                          <span>40</span>
+                          <span class="ruler__value-unit">cm</span>
+                        </div>
+                        <div class="ruler__visual">
+                          <img src="../assets/images/dummy-ruler.png" alt="ruler" width="100%" />
+                        </div>
+                      </div>
+                      <div class="help-area">
+                        <h5 class="title">허리 사이즈 측정방법</h5>
+                        <ol>
+                          <li>1) 바른 자세로 편안하게 숨을 내쉬어 보세요.</li>
+                          <li>2) 거울을 보고 배꼽 위 1~2cm에 줄자로 측정해보세요.</li>
+                        </ol>
+                        <small>※ 이 때, 맨살에 하며 줄자를 당기지 않도록 해요.</small>
+                      </div>
+                      <div class="layer btn-layer">
+                        <button type="button" class="btn btn_primary" data-bs-dismiss="modal">저장</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="record02" class="tab-pane fade" tabindex="0">
+                    <div class="record-header">
+                      <div class="form_area">
+                        <div class="input-group input-group--calendar">
+                          <input type="text" class="form-control" value="2023. 12. 19 (화)" readonly />
+                          <button type="button" class="btn">
+                            <i class="ico drop-down"></i>
+                          </button>
+                        </div>
+                        <div class="input-group input-group--time">
+                          <input type="text" class="form-control" value="10:00" readonly />
+                          <button type="button" class="btn">
+                            <i class="ico drop-down"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="record-body">
+                      <div class="form_area">
+                        <div class="form-group">
+                          <label class="form-label">체지방률</label>
+                          <div class="unit percent unit--disabled">
+                            <input type="number" pattern="\d*" class="form-control" value="34.5" placeholder="00"
+                              disabled />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">체중</label>
+                          <div class="unit kg">
+                            <input type="number" pattern="\d*" class="form-control kg" value="64" placeholder="00" />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">골격근량</label>
+                          <div class="unit kg">
+                            <input type="number" pattern="\d*" class="form-control kg" value="24" placeholder="00" />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">체지방량</label>
+                          <div class="unit kg">
+                            <input type="number" pattern="\d*" class="form-control kg" value="21" placeholder="00" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="layer btn-layer">
+                        <button type="button" class="btn btn_primary" data-bs-dismiss="modal">저장</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 운동기록 -->
+  <div class="modal fade" id="modalInputExercise" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog full">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="wrapper">
+            <!-- Header -->
+            <header class="header">
+              <h1 class="header_title">
+                <p class="ellipsis">운동 기록</p>
+              </h1>
+              <button type="button" class="btn btn_end" data-bs-dismiss="modal">
+                <i class="ico close">닫기</i>
+              </button>
+            </header>
+            <!-- Container -->
+            <div class="container">
+              <div class="content record">
+                <div class="record-header">
+                  <div class="form_area">
+                    <div class="input-group input-group--calendar">
+                      <input type="text" class="form-control" value="2023. 12. 19 (화)" readonly />
+                      <button type="button" class="btn">
+                        <i class="ico drop-down"></i>
+                      </button>
+                    </div>
+                    <div class="input-group input-group--time">
+                      <input type="text" class="form-control" value="10:00" readonly />
+                      <button type="button" class="btn">
+                        <i class="ico drop-down"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="record-body">
+                  <div class="form_area">
+                    <div class="form-group">
+                      <label for="" class="form-label">운동 종류</label>
+                      <input type="text" class="form-control" />
+                      <div class="flex-row">
+                        <label for="checkbox" class="form-check-label">높은 강도로 운동하셨나요?</label>
+                        <div class="form-check">
+                          <input type="checkbox" id="checkbox" name="checkbox" class="form-check-input" checked />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">운동 시간</label>
+                      <div class="unit minute">
+                        <input type="number" pattern="\d*" class="form-control" placeholder="00">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layer btn-layer">
+                    <div class="help-area">
+                      <i class="ico alert"></i>
+                      <p>
+                        <strong>높은 강도로 운동하셨나요?</strong>
+                        숨이 차는 운동은 일시적으로 혈당 수치를 높일 수 있습니다.
+                        하지만 이는 단기적인 현상으로, 장기적으로 숨이 차는 운동은 체지방 연소에 도움을 주는 좋은 습관입니다.
+                      </p>
+                    </div>
+                    <button type="button" class="btn btn_primary" data-bs-dismiss="modal">저장</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- JavaScript -->

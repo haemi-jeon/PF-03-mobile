@@ -8,9 +8,12 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
   <title>앱설치</title>
+  <title>modal</title>
   <!-- StyleSheets -->
-  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -18,13 +21,13 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <button type="button" class="btn btn_start" onclick="window.history.back()">
         <i class="ico back"></i>
       </button>
       <h1 class="header_title">
         <p class="ellipsis">리브레 연결하기</p>
       </h1>
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='01_01_홈_.html'">
         <i class="ico close"></i>
       </button>
     </header>
@@ -51,14 +54,14 @@
               아래 링크를 눌러 <span class="text-primary">Freestyle LibreLink - KR</span><br />
               앱을 다운받으세요.
             </div>
-            <button type="button" class="btn btn_outline_primary">마켓으로 이동하기</button>
+            <button type="button" class="btn btn_outline_primary" onclick="alert('마켓 페이지')">마켓으로 이동하기</button>
           </div>
         </div>
       </div>
     </div>
     <!-- layer -->
     <div class="layer btn-layer">
-      <button type="button" class="btn btn_primary">설치완료</button>
+      <button type="button" class="btn btn_primary" onclick="location.href='01_00_리브레_02회원가입.html'">설치완료</button>
     </div>
   </div>
 

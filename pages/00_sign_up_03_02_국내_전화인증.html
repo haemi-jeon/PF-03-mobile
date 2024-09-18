@@ -17,7 +17,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='../index.html'">
         <i class="ico close">닫기</i>
       </button>
     </header>
@@ -39,7 +39,7 @@
             <div class="certification_box">
               <div class="count_input">
                 <input type="number" pattern="\d*" class="form-control" placeholder="인증번호를 입력해주세요"
-                  autocomplete="one-time-code" required />
+                  autocomplete="one-time-code" value="12345678" required />
                 <span class="time">3:00</span>
               </div>
               <button type="button" class="btn btn_outline_primary" data-bs-toggle="modal"
@@ -49,8 +49,8 @@
           </div>
         </form>
         <div class="btn_area">
-          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
-            data-bs-target="#modalDiscord">인증완료</button>
+          <button type="submit" class="btn btn_primary"
+            onclick="location.href='00_sign_up_03_03_전화인증비밀번호.html'">인증완료</button>
         </div>
       </div>
     </div>

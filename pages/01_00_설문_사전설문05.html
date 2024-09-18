@@ -8,9 +8,12 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
   <title>사전설문05</title>
+  <title>modal</title>
   <!-- StyleSheets -->
-  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -21,7 +24,7 @@
       <h1 class="header_title">
         <p class="ellipsis">사전 설문</p>
       </h1>
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='01_01_홈_.html'">
         <i class="ico close"></i>
       </button>
     </header>
@@ -64,9 +67,12 @@
           </div>
         </div>
       </div>
-      <div class="btn_area">
-        <button type="button" class="btn btn_gray">이전</button>
-        <button type="button" class="btn btn_primary">다음</button>
+    </div>
+    <!-- layer -->
+    <div class="layer btn-layer">
+      <div class="btn-area">
+        <button type="button" class="btn btn_white" onclick="window.history.back()">이전</button>
+        <button type="button" class="btn btn_primary" onclick="location.href='01_00_설문_사전설문06.html'">다음</button>
       </div>
     </div>
   </div>
@@ -75,6 +81,23 @@
   <!-- JavaScript -->
   <script src="../modules/jquery_3.5.1.min.js"></script>
   <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
+  <!-- layer 높이에 따라 container 높이 재설정 -->
+  <script>
+    const layer = document.querySelector('.layer');
+    function callback() {
+      let layerHeight = layer.offsetHeight;
+      const container = document.querySelector('.container');
+      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
+    }
+    callback();
+
+    // 변경 감지 인스턴스 생성
+    const observer = new MutationObserver(callback);
+    // 변경 감지 옵션
+    const config = { attributes: true, childList: true, subtree: true };
+    // 변경 감지 시작
+    observer.observe(layer, config);
+  </script>
 </body>
 
 </html>

@@ -8,9 +8,12 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
   <title>이메일인증</title>
+  <title>modal</title>
   <!-- StyleSheets -->
-  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -18,13 +21,13 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <button type="button" class="btn btn_start" onclick="window.history.back()">
         <i class="ico back"></i>
       </button>
       <h1 class="header_title">
         <p class="ellipsis">리브레 연결하기</p>
       </h1>
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='01_01_홈_.html'">
         <i class="ico close"></i>
       </button>
     </header>
@@ -45,7 +48,7 @@
           </div>
           <div class="form_area">
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="이메일 주소를 입력해 주세요." />
+              <input type="email" class="form-control" placeholder="이메일 주소를 입력해 주세요." value="test@email.com" />
             </div>
           </div>
         </div>
@@ -57,7 +60,7 @@
         <i class="ico alert"></i>
         <span>리브레 앱에서 이메일 주소 확인하기</span>
       </button>
-      <button type="button" class="btn btn_primary">인증번호 발송</button>
+      <button type="button" class="btn btn_primary" onclick="location.href='01_00_리브레_05이메일인증_번호.html'">인증번호 발송</button>
     </div>
   </div>
 

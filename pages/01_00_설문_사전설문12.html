@@ -8,9 +8,12 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
   <title>사전설문12</title>
+  <title>modal</title>
   <!-- StyleSheets -->
-  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -21,7 +24,7 @@
       <h1 class="header_title">
         <p class="ellipsis">사전 설문</p>
       </h1>
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='01_01_홈_.html'">
         <i class="ico close"></i>
       </button>
     </header>
@@ -68,8 +71,8 @@
     <!-- layer -->
     <div class="layer btn-layer">
       <div class="btn-area">
-        <button type="button" class="btn btn_white">이전</button>
-        <button type="button" class="btn btn_primary">다음</button>
+        <button type="button" class="btn btn_white" onclick="window.history.back()">이전</button>
+        <button type="button" class="btn btn_primary" onclick="location.href='01_00_설문_사전설문13.html'">다음</button>
       </div>
     </div>
   </div>

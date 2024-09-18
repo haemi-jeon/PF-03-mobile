@@ -17,10 +17,10 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <a href="00_sign_in_01_02_비밀번호찾기.html" class="btn btn_start">
         <i class="ico back"></i>
-      </button>
-      <button type="button" class="btn btn_end">
+      </a>
+      <button type="button" class="btn btn_end" onclick="location.href='../index.html'">
         <i class="ico close">닫기</i>
       </button>
     </header>
@@ -33,7 +33,7 @@
         <form class="form_area">
           <div class="form-group">
             <label class="form-label asterisk">이름</label>
-            <input type="text" class="form-control" value="" placeholder="이름을 입력해주세요" />
+            <input type="text" class="form-control" value="홍길동" placeholder="이름을 입력해주세요" />
           </div>
           <div class="form-group">
             <label for="phoneNumber" class="form-label asterisk">전화번호</label>
@@ -48,7 +48,7 @@
             <div class="certification_box">
               <div class="count_input">
                 <input type="number" pattern="\d*" class="form-control" placeholder="인증번호를 입력해주세요"
-                  autocomplete="one-time-code" required />
+                  autocomplete="one-time-code" value="1234" required />
                 <span class="time">03:00</span>
               </div>
               <button type="button" class="btn btn_outline_primary" data-bs-toggle="modal"
@@ -63,8 +63,49 @@
           <p><a href="javascript:void(0)">고객센터</a>를 통해 계정 확인 및 비밀번호 재설정을 요청해주세요.</p>
         </div>
         <div class="btn_area">
-          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
-            data-bs-target="#modalDiscord">인증하기</button>
+          <button type="submit" class="btn btn_primary"
+            onclick="location.href='00_sign_in_01_04_비밀번호재설정.html'">인증하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL : 인증번호재발송 -->
+  <div class="modal fade" id="modalResendCode" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">알림</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p>인증번호를 재발송했습니다.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL : 인증번호불일치 -->
+  <div class="modal fade" id="modalDiscord" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">알림</h5>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p>인증번호가 일치하지 않습니다.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn_area">
+            <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+          </div>
         </div>
       </div>
     </div>

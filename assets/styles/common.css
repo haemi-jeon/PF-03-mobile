@@ -340,7 +340,7 @@ textarea.form-control:disabled {background-color: #F9F9FA}
 .profile__btn {position: absolute; bottom: 0; right: -14px; width: 40px; height: 40px; background: url(../images/camera.svg) no-repeat center / contain; font-size: 0; text-indent: -9999px;}
 .profile__btn-options {position: absolute; bottom: 56px; left: 8px; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.28);}
 .profile__btn-options li + li {border-top: 1px solid var(--border);}
-.profile__btn-options li .option {display: flex; justify-content: space-between; width: 200px; height: 46px; color: var(--text-strong); font-size: 1.8rem; font-weight: 500;}
+.profile__btn-options li .option {display: flex; justify-content: space-between; width: 200px; height: 46px; color: var(--text-strong); font-size: 1.6rem; font-weight: 500;}
 .profile__btn-options li .option .ico {width: 24px; height: 24px;}
 
 
@@ -540,7 +540,7 @@ li.recorded.selected .calendar__link::after {background-color: #ffffff;}
 .dropdown-toggle::after {width: 16px; height: 16px; margin: 0; border: none; background: url(../images/arrow_collapse.svg) no-repeat center / 12px; transition: transform .3s;}
 
 .dropdown-edit > .btn {width: 24px; height: 24px; padding: 0; border: none;}
-.dropdown-edit .dropdown-item {justify-content: center; gap: 8px; width: 87px; height: 40px; padding: 0 16px; color: var(--text-strong); font-size: 1.8rem; font-weight: 600; line-height: 14px; letter-spacing: -0.36px;}
+.dropdown-edit .dropdown-item {justify-content: center; gap: 8px; width: 87px; height: 40px; padding: 0 16px; color: var(--text-strong); font-size: 1.6rem; font-weight: 600; line-height: 14px; letter-spacing: -0.36px;}
 .dropdown-edit .dropdown-item .ico {width: 16px; height: 16px;}
 
 
@@ -958,7 +958,7 @@ figure.image img {width: 100%; height: auto;}
 .app_main .title > * {display: flex; flex-direction: column;}
 .app_main .title b {color: var(--primary);}
 .app_main > .btn_area .btn_primary {width: 100%; height: 56px; box-shadow: 0px 8px 12px 0px rgba(96, 83, 243, 0.30) !important;}
-.sns {display: flex; justify-content: space-between; align-items: center; gap: 13px; padding: 32px 16px 48px;}
+.sns {display: flex; justify-content: space-between; align-items: center; gap: 13px; position: relative; padding: 32px 16px 48px;}
 .sns h5 {color: var(--text-sub); font-size: 1.4rem; line-height: 22px; text-align: left; letter-spacing: -0.28px;}
 .sns .btn_area {flex: 1; justify-content: center; gap: 8px;}
 .sns .btn {width: 48px; height: 48px; padding: 0; border-radius: 50%; overflow: hidden;}
@@ -1183,7 +1183,7 @@ figure.image img {width: 100%; height: auto;}
 .record--fasting .record__ico {background-image: url(../images/record--fasting.png);}
 .record__desc {display: flex; flex-direction: column; margin-left: 16px;}
 .record__desc small {margin-bottom: 6px; color: var(--text-sub); font-size: 1.2rem; font-weight: 700; line-height: 1;}
-.record__desc b {overflow: hidden; /* text-overflow: ellipsis; */ white-space: nowrap; display: block; max-width: 180px; color: var(--text-strong); font-size: 1.6rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.32px;}
+.record__desc b {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; max-width: 180px; color: var(--text-strong); font-size: 1.6rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.32px;}
 .record__desc ul {display: flex; gap: 4px; margin-top: 8px;}
 .record__desc ul .badge {height: 16px; padding-left: 6px; padding-right: 6px; border: 1px solid #E8E8E8; border-radius: 60px; background-color: #ffffff; color: var(--text-sub); font-weight: 500;}
 .record__value {margin-left: auto; font-size: 1.6rem; font-weight: 700; line-height: 14px; letter-spacing: -0.32px; text-align: right; white-space: nowrap;}
@@ -1470,7 +1470,7 @@ figure.image img {width: 100%; height: auto;}
 .feed {display: flex; flex-direction: column; width: 100vw;}
 .feed .user-info {display: flex; flex-direction: column; gap: 4px 6px;}
 .feed__header {display: flex; align-items: center; gap: 12px; padding: 24px 16px;}
-.feed__header .dropdown {position: absolute; right: 6px;}
+.feed__header .dropdown {margin-left: auto;}
 .feed__body {padding-left: 16px; padding-right: 16px;}
 .feed__title {color: var(--text-strong); font-size: 1.8rem; font-weight: 600; line-height: 22px; letter-spacing: -0.36px;}
 .feed__content {margin-top: 6px; color: var(--text); font-size: 1.6rem; font-weight: 400; line-height: 24px; letter-spacing: -0.32px;}

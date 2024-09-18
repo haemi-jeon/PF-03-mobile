@@ -55,13 +55,13 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <button type="button" class="btn btn_start">
+    <button type="button" class="btn btn_start" onclick="window.history.back()">
       <i class="ico back">뒤로가기</i>
     </button>
     <h1 class="header_title">
       <p class="ellipsis">타이틀</p>
     </h1>
-    <button type="button" class="btn btn_end">
+    <button type="button" class="btn btn_end" onclick="location.href='.html'">
       <i class="ico close">닫기</i>
     </button>
   </header>
@@ -1013,12 +1013,52 @@
       <h1>로그인/회원가입</h1>
       <div class="btn_area">
         <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalAlertLogin">로그인오류</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
           data-bs-target="#modalCountryCode">국가번호</button>
         <button type="submit" class="btn btn_primary" data-bs-toggle="modal" data-bs-target="#modalCountryCodeNoneData">
           국가번호(결과없음)
         </button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalSendCode">인증번호전송</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalResendCode">인증번호재발송</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalDiscord">인증번호불일치</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalCloseAlert">닫기전경고</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalChangePassword">전화번호오류</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalSignedPhone">기존가입전화번호</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalUniversalMember">통합회원가입안내</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalSignedPhone">인증시간초과</button>
+        <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+          data-bs-target="#modalUnderAge">미성년자</button>
       </div>
       <section>
+        <!-- MODAL : 로그인오류 -->
+        <div class="modal fade" id="modalAlertLogin" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>아이디나 비밀번호를 다시 입력해주세요.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- MODAL : 국가번호-->
         <div class="modal fade" id="modalCountryCode" data-bs-backdrop="static" tabindex="-1">
           <div class="modal-dialog full">
@@ -1088,6 +1128,198 @@
             </div>
           </div>
         </div>
+        <!-- MODAL : 인증번호전송 -->
+        <div class="modal fade" id="modalSendCode" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  인증번호를 전송했습니다.
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary"
+                    onclick="location.href='00_sign_in_01_03_비밀번호찾기인증.html'">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 인증번호재발송 -->
+        <div class="modal fade" id="modalResendCode" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>인증번호를 재발송했습니다.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 인증번호불일치 -->
+        <div class="modal fade" id="modalDiscord" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>인증번호가 일치하지 않습니다.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 닫기전경고 -->
+        <div class="modal fade" id="modalCloseAlert" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>입력 종료 시 현재까지 입력한 모든 내용이 저장되지 않고 사라집니다.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_gray" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn_primary" onclick="location.href='../index.html'">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 전화번호오류 -->
+        <div class="modal fade" id="modalChangePassword" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>유효한 전화번호가 아닙니다.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 기존가입전화번호 -->
+        <div class="modal fade" id="modalSignedPhone" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>이미 가입한 전화번호입니다.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 통합회원가입안내 -->
+        <div class="modal fade" id="modalUniversalMember" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>
+                    웰체크 회원 가입 내역이 있습니다.<br />
+                    회원 정보를 통합하여 하나의 계정으로<br />
+                    웰체크의 모든 서비스를<br />
+                    이용하시겠습니까?
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_gray" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn_primary">동의</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 인증시간초과 -->
+        <div class="modal fade" id="modalSignedPhone" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <p>
+                    인증번호 확인 시간을 초과했습니다.<br />
+                    인증번호를 다시 발송해주세요.
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 미성년자 -->
+        <div class="modal fade" id="modalUnderAge" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">알림</h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  만 14세 미만의 경우<br />
+                  서비스 이용이 불가합니다.
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </li>
     <li>
@@ -1104,6 +1336,11 @@
             data-bs-target="#modalInputSubsCode">구독코드입력</button>
           <button type="button" class="btn btn_primary" data-bs-toggle="modal"
             data-bs-target="#modalStopPosting">입력중단</button>
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
+            data-bs-target="#modalCheckEmail">리브레이메일확인</button>
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal" data-bs-target="#modal">버튼</button>
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal" data-bs-target="#modal">버튼</button>
+          <button type="submit" class="btn btn_primary" data-bs-toggle="modal" data-bs-target="#modal">버튼</button>
         </div>
       </div>
       <section>
@@ -1205,6 +1442,29 @@
                 <div class="btn_area">
                   <button type="button" class="btn btn_white" data-bs-dismiss="modal">아니요</button>
                   <button type="button" class="btn btn_primary">네</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL : 리브레이메일확인-->
+        <div class="modal fade" id="modalCheckEmail" data-bs-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  알림
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <span class="text-primary">전체메뉴 > 설정 > 계정세부정보</span>에서<br />
+                  등록된 이메일을 확인하실 수 있어요.
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="btn_area">
+                  <button type="button" class="btn btn_primary" data-bs-dismiss="modal">확인</button>
                 </div>
               </div>
             </div>

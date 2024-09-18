@@ -17,7 +17,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='../index.html'">
         <i class="ico close">닫기</i>
       </button>
     </header>
@@ -32,13 +32,13 @@
             <label for="phoneNumber" class="form-label asterisk">전화번호</label>
             <input type="text" class="form-control fake_select" value="+ 82 (대한민국)" readonly data-bs-toggle="modal"
               data-bs-target="#modalCountryCode" />
-            <input type="number" pattern="\d*" id="phoneNumber" class="form-control" placeholder="전화번호를 입력해주세요"
-              required />
+            <input type="text" pattern="\d*" id="phoneNumber" class="form-control" placeholder="‘-’를 포함하여 번호를 입력해주세요."
+              value="010-1234-5678" required />
           </div>
         </form>
         <div class="btn_area">
-          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
-            data-bs-target="#modalChangePassword">인증번호 발송</button>
+          <button type="submit" class="btn btn_primary" onclick="location.href='00_sign_up_03_02_국내_전화인증.html'">인증번호
+            발송</button>
         </div>
       </div>
     </div>

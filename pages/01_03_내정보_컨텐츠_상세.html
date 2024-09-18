@@ -8,9 +8,12 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
   <title>내정보_컨텐츠_상세</title>
+  <title>modal</title>
   <!-- StyleSheets -->
-  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet">
+  <link type="text/css" href="../modules/bootstrap-5.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/react-datepicker/react-datepicker.css" rel="stylesheet" />
+  <link type="text/css" href="../modules/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link type="text/css" href="../assets/styles/common.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -18,15 +21,14 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_start">
+      <button type="button" class="btn btn_start" onclick="window.history.back()">
         <i class="ico back"></i>
       </button>
       <h1 class="header_title">
         <p class="ellipsis">콘텐츠</p>
       </h1>
       <button type="button" class="btn btn_end">
-        <i class="ico bookmark"></i>
-        <!-- <i class="ico bookmark--active"></i> -->
+        <i class="ico bookmark bookmark--active"></i>
       </button>
     </header>
     <!-- Container -->
@@ -50,33 +52,12 @@
         </div>
       </div>
     </div>
-    <!-- layer -->
-    <div class="layer btn-layer">
-      <button type="button" class="btn btn_primary">이제, 시작해볼까요?</button>
-    </div>
   </div>
 
 
   <!-- JavaScript -->
   <script src="../modules/jquery_3.5.1.min.js"></script>
   <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
-  <!-- layer 높이에 따라 container 높이 재설정 -->
-  <script>
-    const layer = document.querySelector('.layer');
-    function callback() {
-      let layerHeight = layer.offsetHeight;
-      const container = document.querySelector('.container');
-      container.style.height = "calc(100vh - 48px - " + layerHeight + "px)";
-    }
-    callback();
-
-    // 변경 감지 인스턴스 생성
-    const observer = new MutationObserver(callback);
-    // 변경 감지 옵션
-    const config = { attributes: true, childList: true, subtree: true };
-    // 변경 감지 시작
-    observer.observe(layer, config);
-  </script>
 </body>
 
 </html>

@@ -29,23 +29,22 @@
             <label for="phoneNumber" class="form-label">전화번호(ID)</label>
             <input type="text" class="form-control fake_select" value="+ 82 (대한민국)" readonly data-bs-toggle="modal"
               data-bs-target="#modalCountryCode" />
-            <input type="number" pattern="\d*" id="phoneNumber" class="form-control" placeholder="휴대폰 번호를 입력해주세요"
-              required />
+            <input type="text" pattern="\d*" id="phoneNumber" class="form-control" placeholder="‘-’를 포함하여 번호를 입력해주세요."
+              required value="010-1234-5678" />
           </div>
           <div class="form-group">
             <label class="form-label">비밀번호</label>
             <div class="password_toggle">
-              <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." />
+              <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." value="12345678" />
               <button type="button" class="btn off" onclick="visibleToggleInput(this)"></button>
             </div>
           </div>
         </form>
         <div class="find_area">
-          <a href="javascript:void(0)" class="item-link">비밀번호 찾기</a>
+          <a href="00_sign_in_01_02_비밀번호찾기.html" class="item-link">비밀번호 찾기</a>
         </div>
         <div class="btn_area">
-          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
-            data-bs-target="#modalAlertLogin">로그인</button>
+          <button type="submit" class="btn btn_primary" onclick="location.href='01_01_홈_.html'">로그인</button>
         </div>
       </div>
     </div>
@@ -82,7 +81,7 @@
               <h1 class="header_title">
                 <p class="ellipsis">국가번호 검색</p>
               </h1>
-              <button type="button" class="btn btn_end">
+              <button type="button" class="btn btn_end" data-bs-dismiss="modal">
                 <i class="ico close">닫기</i>
               </button>
             </header>
@@ -148,8 +147,9 @@
   <script src="../modules/bootstrap-5.3/js/bootstrap.bundle.min.js"></script>
   <script>
     /* password show/hide */
-    const visibleToggleInput = param => {
+    const visibleToggleInput = (param) => {
       const isVisible = param.classList.toggle("on");
+
       if (isVisible) {
         param.classList.remove("off");
         param.classList.add("on");

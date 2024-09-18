@@ -17,7 +17,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='../index.html'">
         <i class="ico close">닫기</i>
       </button>
     </header>
@@ -34,6 +34,7 @@
               <img src="../assets/images/img-contents01.png" alt="프로필 이미지" />
             </span>
             <button type="button" class="btn profile__btn">파일선택</button>
+            <!-- 파일 선택 메뉴 커스텀 -->
             <ul class="profile__btn-options">
               <li>
                 <button type="button" class="btn option">
@@ -59,14 +60,14 @@
             <!-- 유효 .valid 유효하지 않음 .invalid-->
             <label class="form-label asterisk">닉네임</label>
             <div class="certification_box">
-              <input type="text" class="form-control" placeholder="2~8자 이내로 입력해주세요." required />
+              <input type="text" class="form-control" placeholder="2~8자 이내로 입력해주세요." value="길동길동" required />
               <button type="button" class="btn btn_outline_primary">중복 확인</button>
             </div>
             <div class="validation-feedback">사용 가능한 닉네임입니다.</div>
           </div>
         </form>
         <div class="btn_area">
-          <button type="submit" class="btn btn_primary">설정 완료</button>
+          <button type="submit" class="btn btn_primary" onclick="location.href='01_01_홈_.html'">설정 완료</button>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='../index.html'">
         <i class="ico close">닫기</i>
       </button>
     </header>
@@ -31,27 +31,25 @@
         <form class="form_area">
           <div class="form-group">
             <label class="form-label asterisk">이름</label>
-            <input type="text" class="form-control" value="" placeholder="실명을 입력해주세요." required />
+            <input type="text" class="form-control" value="홍길동" placeholder="실명을 입력해주세요." required />
           </div>
           <div class="d-flex">
             <div class="form-group">
               <label class="form-label asterisk">생년월일</label>
-              <input type="date" class="form-control" placeholder="YYYY-MM-DD" required />
+              <input type="date" class="form-control" placeholder="YYYY-MM-DD" value="1999-11-11" required />
             </div>
             <div class="form-group">
               <label class="form-label asterisk">성별</label>
               <select class="form-select" required>
-                <option value="" selected disabled>선택</option>
+                <option value="" disabled>선택</option>
                 <option value="남자">남자</option>
-                <option value="여자">여자</option>
+                <option value="여자" selected>여자</option>
               </select>
             </div>
           </div>
         </form>
         <div class="btn_area">
-          <button type="button" class="btn btn_white">이전</button>
-          <button type="submit" class="btn btn_primary" data-bs-toggle="modal"
-            data-bs-target="#modalUnderAge">다음</button>
+          <button type="submit" class="btn btn_primary" onclick="location.href='00_sign_up_04_가입완료.html'">다음</button>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn_end">
+      <button type="button" class="btn btn_end" onclick="location.href='../index.html'">
         <i class="ico close">닫기</i>
       </button>
     </header>
@@ -41,15 +41,15 @@
             <!-- 유효하지 않음 ? .invalid 추가 : 제거 -->
             <label class="form-label asterisk">비밀번호</label>
             <div class="password_toggle">
-              <input class="form-control" type="password" placeholder="영문, 숫자, 특수문자 포함 8자 이상" required />
+              <input class="form-control" type="password" placeholder="영문, 숫자, 특수문자 포함 8자 이상" value="password1234!"
+                required />
               <button type="button" class="btn off" onclick="visibleToggleInput(this)"></button>
             </div>
             <div class="validation-feedback text-sm">영문, 숫자, 특수문자 포함 최소 8자 ~ 20자로 설정해주세요.</div>
           </div>
         </form>
         <div class="btn_area">
-          <button type="button" class="btn btn_gray">뒤로</button>
-          <button type="submit" class="btn btn_primary">다음</button>
+          <button type="submit" class="btn btn_primary" onclick="location.href='00_sign_up_03_07_회원정보.html'">다음</button>
         </div>
       </div>
     </div>

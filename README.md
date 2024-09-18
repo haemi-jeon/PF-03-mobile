@@ -48,14 +48,9 @@ Screenshot
 
 <img src="https://github.com/user-attachments/assets/5ce5f864-6a3b-4c71-b2ef-9db280d5ef00" width="160px" alt="입력" />
 <img src="https://github.com/user-attachments/assets/051af6a5-2fc2-41d4-9b24-26f7e4441238" width="160px" alt="캘린더" />
-
 <img src="https://github.com/user-attachments/assets/6ed0c9ee-2945-44a0-b89d-12cdb24a581c" width="160px" alt="알림" />
 <img src="https://github.com/user-attachments/assets/1c1dc02f-56da-489d-9dd7-b4b8f754fd69" width="160px" alt="사전설문" />
-<img src="https://github.com/user-attachments/assets/fdd90e98-80cd-4798-8a9f-7fb967d16bde" width="160px" alt="증상체크" />
-
-<img src="https://github.com/user-attachments/assets/5eddfb51-d5b4-4d4d-948a-eb5e5f2f2a5d" width="160px" alt="내정보" />
 <img src="https://github.com/user-attachments/assets/67f4f0b3-3df1-4947-9211-197c59b8704f" width="160px" alt="설정" />
-
 <img src="https://github.com/user-attachments/assets/deb1122e-1f5b-400f-abfa-cf852f335d44" width="160px" alt="홈" />
 <img src="https://github.com/user-attachments/assets/f785474f-b363-457e-b23f-f77e5fcc4361" width="160px" alt="기록" />
 <img src="https://github.com/user-attachments/assets/20376ccd-80bd-4b33-a8bd-3d51356cd8c9" width="160px" alt="커뮤니티" />
